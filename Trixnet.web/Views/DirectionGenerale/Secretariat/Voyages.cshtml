@@ -1,0 +1,86 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var path = "/img/Secretariat/Voyages";
+    //Informations Voyages
+    var politiqueThales = "https://selene.corp.thales/portal/fr/utilisateur/voyages-et-deplacements-politique-voyage";
+    var instructionsVoyagesDeplacements = path + "SCR-I-007 Fiche instruction voyages et deplacements version S doc.pdf";
+
+    //Avant de partir
+    var contactAssurance = path + "CONTACTS ASSURANCE 18-03-15.pdf";
+    //Réserver son voyage
+    var contactCarlsonConcur = path + "Fiche contacts CWT St Etienne - Jan 2017.pdf";
+    var listHotels = path + "SCR-L-065 Liste des hotels en France et a letranger.xls";
+    //Après son voyage
+    var indicNoteFrais = path + "indicateur_remboursement_note_de_frais.gif";
+    //Assurance
+    var declarationSinistre = path + "Thales_Fiche_de_declaration_de_sinistre_2015.pdf";
+    var carteAssurance = path + "Carte assurance Thales mission Business Travel ou carte AIG au 24 02 2015.pdf";
+}
+<link rel="stylesheet" href="~/css/TimeLineTemplate.css">
+<script src="~/js/Voyages.js"></script>
+<section>
+    <h2 style="color : white; text-align : center;">Utilisez le clic molette pour télécharger les documents</h2>
+    <div class="timeline">
+        <ul>
+            <li>
+                <div class="content">
+                    <h3 class="dropdown" data-toggle="dropdown">Informations voyages</h3>
+                    <ul class="dropdown-menu padding-right-408" aria-labelledby="dropdownMenuInfos">
+                        <li><a href="@politiqueThales" target="_blank">Politique voyage THALES</a></li>
+                        <li><a href="" target="_blank">Guide du salarié en mission (pas accès)</a></li>
+                        <li><a href="" target="_blank">Condition carte AMEX (pas accès)</a></li>
+                        <li><a href="@instructionsVoyagesDeplacements" target="_blank">Instructions voyages et déplacements</a></li>
+                    </ul>
+                </div>
+                @*   <div class="point"></div>
+                    <div class="date">
+                         <h4></h4>
+                     </div>*@
+            </li>
+            <li>
+                <div class="content">
+                    <h3 class="dropdown" data-toggle="dropdown">Avant de partir</h3>
+                    <ul class="dropdown-menu padding-right-510" aria-labelledby="dropdownMenuInfos">
+                        <li><a href="" target="_blank" title="">Demande Préalable (où ?)</a></li>
+                        <li><a href="@contactAssurance" target="_blank" title="">Contact assurance à emporter</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="content">
+                    <h3 class="dropdown" data-toggle="dropdown">Réserver son voyage</h3>
+                    <ul class="dropdown-menu padding-440" aria-labelledby="dropdownMenuInfos">
+                        <li><a href="" target="_blank" title="">Procédures (où ?)</a></li>
+                        <li><a href="@contactCarlsonConcur" target="_blank" title="">Contact CARLSON et CONCUR</a></li>
+                        <li><a href="@listHotels" target="_blank" title="">Liste des hôtels et hébergements</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="content">
+                    <h3 class="dropdown" data-toggle="dropdown">Après son voyage</h3>
+                    <ul class="dropdown-menu padding-440" aria-labelledby="dropdownMenuInfos">
+                        <li><a href="" title="" target="_blank">Procédure Note de frais (où ?)</a></li>
+                        <li><a href="@indicNoteFrais" target="_blank" title="">Indicateur remboursement note de frais</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="content margin-bottom-100">
+                    <h3 class="dropdown" data-toggle="dropdown">Assurance</h3>
+                    <ul class="dropdown-menu padding-440" aria-labelledby="dropdownMenuInfos">
+                        <li><a href="@declarationSinistre" target="_blank">Fiche déclaration de sinistre</a></li>
+                        <li><a href="@carteAssurance" target="_blank">Carte assurance THALES ou AIG</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</section>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+<script src="~/js/Utils.js"></script>

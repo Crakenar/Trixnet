@@ -1,0 +1,96 @@
+@model IEnumerable<Trixnet.web.Models.AnnuaireClass>
+
+@{
+    var path = "~/img/Trombinoscope/";
+    var anonymous = "~/img/anonyme.jpeg";
+    string photo = "";
+}
+<link rel="stylesheet" href="~/css/Annuaire.css">
+<section>
+    <table class="containerAnnuaire">
+        <thead>
+            <tr>
+                <th class=""><h1>Nom</h1></th>
+                <th class=""><h1>Prénom</h1></th>
+                <th class=""><h1>Email</h1></th>
+                <th class=""><h1>Telephone</h1></th>
+                <th class=""><h1>Photographie</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() == 0)
+            {
+
+                <tr>
+                    <td>@ViewBag.ErrorMessage</td>
+                    <td>@ViewBag.ErrorMessage</td>
+                    <td>@ViewBag.ErrorMessage</td>
+                    <td>@ViewBag.ErrorMessage</td>
+                    <td>@ViewBag.ErrorMessage</td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    <!-- pour chaque article on lui créer un modal(pop-up bootstrap) avec son titre sa description etc-->
+                    <div class="modal fade" id="employe-@item.Nom-@item.Tel" tabindex="-1" role="dialog" aria-labelledby="employeModal" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="employeModal">yikes</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Nom : <span>@item.Nom</span>
+                                    <br />
+                                    Prénom : <span>@item.Prenom</span>
+                                    <br />
+                                    Email : <span>@item.Email</span>
+                                    <br />
+                                    Telephone : <span>@item.Tel</span>
+                                    <br />
+                                    Secteur : <span>@item.Secteur</span>
+                                    <br />
+                                    Fonction : <span>@item.Fonction</span>
+                                    <br />
+                                    Statut : <span>@item.Statut</span>
+                                    <br />
+                                    Description du job :  @((item.Description_job == null) || (item.Description_job == "") ? "Non renseigné" : "")<span>@item.Description_job</span>
+                                    <br />
+                                    Description divers : @((item.Description_divers == null) || (item.Description_divers == "") ? "Non renseigné" : "") <span>@item.Description_divers</span>
+                                    <br />
+                                    Année d'arrivée : @((item.AnneeArrivee == null) || (item.AnneeArrivee == "") ? "Non renseigné" :"")  <span>@item.AnneeArrivee</span>
+                                    <br />
+                                    Photographie :@* @(item.Photographie == true ? "" : photo=anonymous) <span class="col-12"><img src="@photo" /></span>*@
+                                    @if(item.Photographie == true)
+                                    {
+                                        photo = "";
+                                    }
+                                    else
+                                    {
+                                        photo = anonymous;
+                                    }
+                                    <img src="@photo" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Ici c'est l'affichage simple de la page HTML-->
+                    <tr>
+                        <td> <a data-toggle="modal" href="#employe-@item.Nom-@item.Tel" data-target="#employe-@item.Nom-@item.Tel" style="color : #fb667a">  @Html.DisplayFor(modelItem => item.Nom)  </a></td>
+                        <td>  @Html.DisplayFor(modelItem => item.Prenom)</td>
+                        <td><a href="mailto:@item.Email">  @Html.DisplayFor(modelItem => item.Email)</a></td>
+                        <td>  @Html.DisplayFor(modelItem => item.Tel)</td>
+                        <td> @Html.DisplayFor(modelItem => item.Photographie)</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</section>

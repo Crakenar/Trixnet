@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--<meta content="text/html;charset=utf-8" http-equiv="content-type" />
+         <title>Trixnet - ViewData["Title"]</title>-->
+    <meta content="utf-8" http-equiv="content-encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/lib/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="~/css/landing-page.css" rel="stylesheet">
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Layout.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light static-top" style="background-color:rgba(0,51,160,0.7)">
+            <div class="container" style="margin-left:-150px">
+                <div class="enteteTrixnet col-lg-2" style="margin-right : -2000px!important">
+                    <a href="/"  style="margin-left : 200px!important">
+                        <img class="navbar-brand img-navbar" src="~/img/trixell_White.png">
+                        <img src="~/img/TrixellSousTitre.png" style="width:12rem">
+                    </a>
+                </div>
+                <div class="col-lg-8">                        
+                        <form class="row" asp-controller="Home" asp-action="Annuaire" method="post" target="_blank">
+                            <select class="col-lg-1" name="optionAnnuaire" id="optionAnnuaire">
+                                <option value="Trixell">Trixell</option>
+                                <option value="eDir">eDir</option>
+                            </select>
+                                <input class="form-control searchbar-style col-lg-11" id="" type="text" name="search" placeholder="Recherche dans l'annuaire" />
+                        </form>
+                    </div>
+                </div>
+                <!--Fenetre de connexion -->
+                <div class="modal fade" id="connexion" tabindex="-1" role="dialog" aria-labelledby="articleModal" aria-hidden="true" >
+                    <div class="modal-dialog modal-lg" role="document" >
+                        <div class="modal-content" style="background-color : rgb(0,25,80)">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="articleModal" style="color : white;">Page de connexion</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form asp-controller="Connexion" asp-action="login" method="post">
+                                    <!--<input class="form-control" asp-for="Email" placeholder="Email" /> <br />--> <!--asp-for="Email"-->
+                                    <!--<input class="form-control" asp-for="Password" placeholder="Password" /> <br />--> <!--" asp-for="Password"-->
+                                    <button type="submit">Connexion</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Ici c'est l'affichage simple de la page HTML-->
+                <div class="col-lg-2">
+                    <a class="btn btn-primary trix-button" data-toggle="modal" href="#connexion" data-target="#connexion">
+                        Se connecter
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,51,160,0.7); padding: 0;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Equipes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li class="dropdown-submenu dropright">
+                                <a class="dropdown-item dropdown-toggle" href="~/DirectionGenerale/IndexDirectionGenerale.cshtml">Direction Générale</a>
+                                @* <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"></button>*@
+                                <ul class="dropdown-menu ">
+                                    <li><a class="dropdown-item" href="~/DirectionGenerale/IndexDirectionGenerale.cshtml">Direction Générale</a></li>
+                                    <li><a class="dropdown-item" href="~/DirectionGenerale/Secretariat/Secretariat.cshtml">Secretariat</a></li>
+                                    <li><a class="dropdown-item" href="~/DirectionGenerale/RH/RH.cshtml">Ressources Humaines</a></li>
+                                </ul>
+                            </li>
+                            <a class="dropdown-item dropdownMultiple" href="~/DirectionGenerale/IndexDirectionGenerale.cshtml"></a>
+                            <a class="dropdown-item" href="~/DirectionIndustrielle/Index.cshtml">Direction Industrielle</a>
+                            <a class="dropdown-item" href="~/DirectionTechnique/Index.cshtml">Direction Technique</a>
+                            <li class="dropdown-submenu dropright">
+                                <a class="dropdown-item dropdown-toggle" href="~/DirectionFinanciere/Index.cshtml">Direction Financière</a>
+                                @* <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"></button>*@
+                                <ul class="dropdown-menu">
+                                    <a class="dropdown-item" href="~/DirectionFinanciere/Index.cshtml">Direction Financière</a>
+                                    <li><a class="dropdown-item" href="~/DirectionFinanciere/SI/Index.cshtml">Systeme Information</a></li>
+                                    <li><a class="dropdown-item" href="~/DirectionFinanciere/Financiere/Index.cshtml">Finance</a></li>
+                                </ul>
+                            </li>
+
+                            <a class="dropdown-item" href="~/DirectionSupplyChain/Index.cshtml">Direction Supply Chaine</a>
+                            <a class="dropdown-item" href="~/DirectionQualite/Index.cshtml">Direction Qualité</a>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/LiensPratiques/LiensPratiques.cshtml">Liens pratiques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="~/Formulaires/Formulaire.cshtml" class="nav-link">Formulaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://intranet.peopleonline.corp.thales">People Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Nos Produits</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="bg-light">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="bg-light">
+        <div class="footerPadding" style="border-top: #e2e5e7 solid 1px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item">
+                                <a class="trix-blue" href="#">About</a>
+                            </li>
+                            <li class="list-inline-item">&sdot;</li>
+                            <li class="list-inline-item">
+                                <a class="trix-blue" href="#">Contact</a>
+                            </li>
+                            <li class="list-inline-item">&sdot;</li>
+                            <li class="list-inline-item">
+                                <a class="trix-blue" href="#">Terms of Use</a>
+                            </li>
+                            <li class="list-inline-item">&sdot;</li>
+                            <li class="list-inline-item trix-blue">
+                                <a class="trix-blue" href="#">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 h-100 text-center my-auto footerPadding" style="background-color: #f2f5f7; border-top: #e2e5e7 solid 1px;">
+            <img src="~/img/trixell_2colors.png" class="footer-logo">
+            <p class="text-muted small mb-4 mb-lg-0" style="padding-top: 20px ;">&copy; Trixnet 2020. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

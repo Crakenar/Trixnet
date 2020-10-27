@@ -1,0 +1,179 @@
+@inject OrchardCore.IOrchardHelper Orchard
+@*
+
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+
+    @* async Task<IEnumerable <OrchardCore.ContentManagement.ContentItem >> getContent(String typeOfArticle, OrchardCore.IOrchardHelper Orchard)
+        {
+            return await Orchard.GetRecentContentItemsByContentTypeAsync(typeOfArticle, 3);
+        }*@
+    @*IEnumerable<OrchardCore.ContentManagement.ContentItem> getContent(String typeOfArticle)
+        {
+            return (IEnumerable < OrchardCore.ContentManagement.ContentItem >)Orchard.GetRecentContentItemsByContentTypeAsync(typeOfArticle, 3);
+        }*@
+
+    @*    Task<IEnumerable<OrchardCore.ContentManagement.ContentItem>> getContent(String typeOfArticle)
+        {
+            return (Task<IEnumerable<OrchardCore.ContentManagement.ContentItem>>)Orchard.GetRecentContentItemsByContentTypeAsync(typeOfArticle, 3);
+        }*@
+    //    'System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<OrchardCore.ContentManagement.ContentItem>>' en 'System.Collections.Generic.IEnumerable<OrchardCore.ContentManagement.ContentItem>'.
+
+
+    string type = ViewContext.ViewBag.TypeOfArticle;
+    int how_many_retreived = 3;
+
+    var tab_articles = await Orchard.GetRecentContentItemsByContentTypeAsync(type, how_many_retreived);
+    var tab_articles2 = await Orchard.GetRecentContentItemsByContentTypeAsync("Projets", how_many_retreived);
+    //ArticleSI ArticleFinance Projets ArticleRH
+
+}
+@Orchard.ConsoleLog(tab_articles2)
+<div class="bg-white">
+    <div class="trixell-X AppSection SectionGD SectionHB">
+        <div class="container showcase-text">
+            <h2 class="jaapooki" style="font-size: 1.5rem; color: rgb(19, 133,203);"><i class="fas fa-newspaper"></i>   Actualités</h2>
+        </div>
+        @foreach (var articles in tab_articles)
+        {
+            Trixnet.web.Services.UtilitairesClass utils = new Services.UtilitairesClass();
+            string articleText = articles.Content.MarkdownBodyPart.Markdown;
+            string articleTextFull = articles.Content.MarkdownBodyPart.Markdown;
+            string articleTitre = articles.DisplayText;
+            string defaultImage = "../../img/bg-masthead.jpg";
+            if (articleTitre.Length > 60)
+            {
+                articleTitre = articleTitre.Substring(0, 60);
+            }
+
+
+            System.Collections.Generic.List<string> imagesPrincipales = new List<string>();
+            articleText ??= "pas de description"; //si le texte est null alors on met "pas de description"
+                                                  //Si le texte de l'article est supérieur à 200 caractere alors il est rogné pour l'affichage sur l'accueil
+            if (articleText.Length > 200)
+            {
+                articleText = articleText.Substring(0, 200);
+            }
+
+            switch (type)
+            {
+                case "Article":
+                    if (utils.setImageTitleArticle(articles.Content.Article.Media.Paths).Count == 0)
+                    {
+                        imagesPrincipales.Add(defaultImage);
+                    }
+                    else
+                    {
+                        imagesPrincipales = utils.setImageTitleArticle(articles.Content.Article.Media.Paths);
+                    }
+                    break;
+                case "ArticleSecretariat":
+                    if (utils.setImageTitleArticle(articles.Content.ArticleSecretariat.MediaArticle.Paths).Count == 0)
+                    {
+                        imagesPrincipales.Add(defaultImage);
+                    }
+                    else
+                    {
+                        imagesPrincipales = utils.setImageTitleArticle(articles.Content.ArticleSecretariat.MediaArticle.Paths);
+                    }
+                    break;
+                case "ArticleRH":
+                    if (utils.setImageTitleArticle(articles.Content.ArticleRH.MediaArticle.Paths).Count == 0)
+                    {
+                        imagesPrincipales.Add(defaultImage);
+                    }
+                    else
+                    {
+                        imagesPrincipales = utils.setImageTitleArticle(articles.Content.ArticleRH.MediaArticle.Paths);
+                    }
+                    break;
+                case "ArticleFinance":
+                    if (utils.setImageTitleArticle(articles.Content.ArticleFinance.MediaArticle.Paths).Count == 0)
+                    {
+                        imagesPrincipales.Add(defaultImage);
+                    }
+                    else
+                    {
+                        imagesPrincipales = utils.setImageTitleArticle(articles.Content.ArticleFinance.MediaArticle.Paths);
+                    }
+                    break;
+                case "ArticleSI":
+                    if (utils.setImageTitleArticle(articles.Content.ArticleSI.MediaArticle.Paths).Count == 0)
+                    {
+                        imagesPrincipales.Add(defaultImage);
+                    }
+                    else
+                    {
+                        imagesPrincipales = utils.setImageTitleArticle(articles.Content.ArticleSI.MediaArticle.Paths);
+                    }
+                    break;
+                case "Projets":
+                    if (utils.setImageTitleArticle(articles.Content.Projets.MediaProjets.Paths).Count == 0)
+                    {
+                        imagesPrincipales.Add(defaultImage);
+                    }
+                    else
+                    {
+                        imagesPrincipales = utils.setImageTitleArticle(articles.Content.Projets.MediaProjets.Paths);
+                    }
+                    break;
+            }
+
+            @foreach (var item in imagesPrincipales)
+            {
+                var documents = utils.setDocumentsArticle(articles.Content.BagPart.Media.Paths);
+                <div class="modal fade" id="article-@articles.ContentItemId" tabindex="-1" role="dialog" aria-labelledby="articleModal" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="articleModal">@articleTitre</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">@articleTextFull</div>
+                            <hr />
+                            <div class="row">
+                                <!--Affichage de l'ensemble des documents liés à l'article-->
+                                @for (int p = 0; p < documents.Count; p++)
+                                {
+                                    <span class="col-lg-4">
+                                        <img src="@documents[p].GetType().GetProperty("imageShow").GetValue(@documents[p],null)" width="40" height="30" />
+                                        <a href="@documents[p].GetType().GetProperty("downloadLink").GetValue(@documents[p],null)" target="_blank">@documents[p].GetType().GetProperty("nameDoc").GetValue(@documents[p], null)</a>
+                                    </span>
+                                }
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Ici c'est l'affichage simple de la page HTML-->
+                <div class="container showcase-text">
+                    <a href="#article-@articles.ContentItemId" class="row link-news" data-toggle="modal" data-target="#article-@articles.ContentItemId">
+                        <div class="col-lg-4 text-white img-news" style="background-image: url('@item');"></div>
+                        <div class="col-lg-8 text-news">
+                            <h2>@articleTitre</h2>
+                            <p class="lead mb-0" style="text-justify: distribute;">@articleText<p>
+                        </div>
+                    </a>
+                    <div class="row">
+                        <!--Affichage de l'ensemble des documents liés à l'article-->
+                        @for (int p = 0; p < documents.Count; p++)
+                        {
+                            <!--<span>-->
+                            <div class="col-lg-4">
+                                <img src="@documents[p].GetType().GetProperty("imageShow").GetValue(@documents[p],null)" width="40" height="30" />
+                                <a href="@documents[p].GetType().GetProperty("downloadLink").GetValue(@documents[p],null)" target="_blank">@documents[p].GetType().GetProperty("nameDoc").GetValue(@documents[p], null)</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+        }
+    </div>
+</div>

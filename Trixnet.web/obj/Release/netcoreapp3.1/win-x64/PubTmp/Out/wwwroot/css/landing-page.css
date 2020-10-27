@@ -1,0 +1,505 @@
+/*!
+ * Start Bootstrap - Landing Page v5.0.7 (https://startbootstrap.com/template-overviews/landing-page)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
+ */
+
+
+@font-face {
+  font-family: "Jaapooki";
+  src: url("../font/jaapokki-regular.woff");
+}
+
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+
+header.page-secretariat {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/secretariat.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.page-secretariat .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.page-projets {
+    position: relative;
+    background-color: #343a40;
+    background: url("../img/proejts.jpeg") no-repeat center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+header.page-projets .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+header.page-RH {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/ressourceHumaine.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.page-RH .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.page-inProgress {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/InProgress.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.page-inProgress .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+    min-height: 30rem;
+    max-height: 30rem;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 2rem 3.5rem;
+  }
+}
+
+.features-icons {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.testimonials .testimonial-item {
+  max-width: 18rem;
+}
+
+.testimonials .testimonial-item img {
+  max-width: 12rem;
+  box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.call-to-action .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.footerPadding {
+    padding: 4rem 0;
+}
+
+
+.img-navbar {
+  max-width: 12rem;
+}
+
+/* .form-navbar {
+  width: 60%;
+} */
+
+.searchbar{
+  width: 100%;
+  background-color: none;
+}
+
+.nav-item{
+  padding: 0rem 0.8rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.link-news :hover, :active, :visited{
+  text-decoration: none;
+}
+
+.img-news{
+  height: 12rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-news{
+  margin: auto 0;
+  padding: 0 3rem;
+  color: rgb(19,133,203);
+}
+
+@media (min-width: 1440px) {
+  .container{
+    max-width: 1280px;
+  }
+
+  .container-fluid{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container{
+    max-width: 1725px;
+  }
+
+  .container-fluid{
+    max-width: 1525px;
+  }
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.trix-button{
+  background-color: rgba(3,39,109,0);
+  border-radius: 0;
+  border-color: #fff ;
+}
+
+.trix-button:hover{
+  background-color: rgba(19,133,203,0.8);
+}
+
+.footer-logo{
+  max-width: 12rem;
+  margin: auto;
+  text-align: center;
+}
+
+.navbar-nav{
+  text-align: center;
+  margin:auto;
+}
+
+.nav-link
+{
+  color: white !important;
+  padding-bottom: 0.5rem;
+  border-bottom: rgba(3,39,109,0) solid 3px;
+}
+
+.nav-link:hover{
+  border-bottom: #fff solid 3px;
+  color: #f8f9fa;
+}
+
+.app-link
+{
+  padding: 0.5rem;
+}
+
+.app-item{
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+.app-item:hover{
+ background-color: rgba(19,133,203,0.8);
+}
+
+.carroussel-arrows{
+  font-size: 2rem;
+  padding: 50% 0;
+}
+
+.carousel-item{
+  max-height: 25rem;
+}
+
+.navbar{
+  padding : 0.8rem 0 0 0;
+}
+
+.page-service{
+  padding-top: 9rem;
+  padding-bottom: 7rem;
+}
+
+.picto{
+  font-size: 3.5rem ;
+}
+
+body{
+   background: url(../img/bgTest2.jpg) no-repeat center center;
+  background-attachment: fixed;
+  background-size: 100%; 
+}
+
+.bg-white{
+  background-color: #121212;
+}
+
+.searchbar-style{
+  background-color: rgba(3,39,109,0);
+  border: none;
+  color: white;
+  border-radius: 0;
+  border-bottom: #fff solid 3px;
+  transition: 0.5s;
+}
+
+.searchbar-style::placeholder{
+  color: rgba(255,255,255,0.6);
+}
+
+.searchbar-style:hover{
+  border-color: rgba(19,133,203,0.8);
+  box-shadow: none;
+}
+
+.searchbar-style:focus{
+  background-color: rgba(255,255,255,0.2);
+  border-color: #fff;
+  box-shadow: none;
+  color: white;
+}
+
+.jaapooki{
+  font-family: 'jaapooki',sans-serif;;
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.titreSection{
+  padding: 10px;
+}
+
+.SectionHB{
+  margin-top: 10px ;
+  margin-bottom: 10px ;
+}
+
+.SectionGD{
+  margin-left: 10px ;
+  margin-right: 10px ;
+}
+
+.AppSection{
+  background-color: white;
+  border:rgba(0, 25, 80, 0.1) solid 1px;
+  border-top: rgb(19, 133,203) solid 5px;
+}
+
+.pageBody{
+  margin: 10px;
+}
+
+.archive-btn{
+    left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    height: 10%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+
+.trixell-X{
+  background: url(../img/triX2.png) no-repeat center center;
+  background-size: 87%;
+}
+
+.trix-blue{
+  color: rgb(19,133,203);
+}
+
+.link-picto{
+  text-decoration: none;
+  color: black;
+}
+
+.link-picto:hover{
+  color: rgb(19,133,203);
+}
+
+.font-special{
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.carousel-control-prev{
+  height: 80%;
+  margin: auto;
+}
+
+
+.font-special{
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.text-sections{
+  font-size: 1.1rem;
+  color: rgb(19, 133,203);
+  margin: 0;
+}
+
+.PageSection p{
+  padding: 10px;
+  color: white;
+}
+
+.titreSectionRH{
+  padding: 20px 15px;
+}
+
+.titreSectionRH:hover{
+  background-color: rgba(255,255,255,0.05);
+}
+
+.imgSectionRH{
+  height: 200px;
+  object-fit: contain;
+}
+
+.PageSection{
+  background-color: rgba(255,255,255,0.05);
+  border:rgba(0, 25, 80, 0.1) solid 1px;
+  border-top: rgb(19, 133,203) solid 5px;
+}
+
+.row-actu{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.img-lienPratique{
+  min-height: 10rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.enteteTrixnet {
+    display: flex;
+}

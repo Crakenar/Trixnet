@@ -1,0 +1,222 @@
+@page
+@inject OrchardCore.IOrchardHelper Orchard
+
+@model Trixnet.web.Controllers.IndexModel
+@{
+    //Derniere modification Teo berguerre 23/09/2020 => Fil d'actualite avec modal
+    /*Page direction FINANCIERE
+    Celle-ci recupere les Articles et Projets des Finances / SI afin de les afficher
+    A partir de cette page on peut acceder à :
+    SI
+    - Help.cshtml
+    - Stats.cshtml
+    Finance
+    - InstructionFormulaire.cshtml
+    */
+
+
+    int how_many_retrieved = 2;
+    int actualite_finance = 4;
+    //On récupere tout les items de type Projets et les Articles du SI
+    var tab_projets = await Orchard.GetRecentContentItemsByContentTypeAsync("Projets", how_many_retrieved);
+    var tab_articlesSI = await Orchard.GetRecentContentItemsByContentTypeAsync("ArticleSI", how_many_retrieved);
+    var tab_articlesFinance = await Orchard.GetRecentContentItemsByContentTypeAsync("ArticleFinance", actualite_finance);
+
+}
+
+<link rel="stylesheet" href="~/css/DirectionFinanciere.css">
+<section>
+    <!-- Image Showcases -->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="col-lg-12 trixell-X">
+                <!--finance-->
+                <div class="row" style="border:0.1px solid transparent">
+                    <div class="col-lg-6 background-color-darkblue">
+                        <div class="block">
+                            <a class="color-white" href="~/DirectionFinanciere/Financiere/Index.cshtml">Finance</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <section class="features-icons text-center margin-top-50">
+                            <div class="container">
+                                <div class="row ">
+                                    <div class="col-lg-6">
+                                        <a href="mailto:secretariat@trixell-thalesgroup.com" class="link-picto">
+                                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                                <div class="features-icons-icon d-flex">
+                                                    <i class="far fa-envelope m-auto trix-blue"></i>
+                                                </div>
+                                                <h3>Nous écrire</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="../InProgress.html" class="link-picto">
+                                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                                <div class="features-icons-icon d-flex">
+                                                    <i class="fas fa-align-justify m-auto trix-blue picto"></i>
+                                                </div>
+                                                <h3>Instructions et formulaires</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+                <!--SI-->
+                <div class="row" style=" border: 0.1px solid transparent">
+                    <div class="col-lg-6">
+                        <section class="features-icons text-center margin-top-100">
+                            <div class="container">
+                                <div class="row ">
+                                    <div class="col-lg-6">
+                                        <a href="~/DirectionFinanciere/SI/Help.cshtml" class="link-picto">
+                                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                                <div class="features-icons-icon d-flex">
+                                                    <i class="far fa-question-circle m-auto trix-blue"></i>
+                                                </div>
+                                                <h3>Besoin d'aide ?</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="~/DirectionFinanciere/SI/Projets.cshtml" class="link-picto">
+                                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                                <div class="features-icons-icon d-flex">
+                                                    <i class="fas fa-archive m-auto trix-blue picto"></i>
+                                                </div>
+                                                <h3>Statistiques</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-6 background-color-darkblue">
+                        <div class="block">
+                            <a class="color-white" href="~/DirectionFinanciere/SI/Index.cshtml">Systeme d'Information</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters bg-white">
+                <div class="col-lg-12 order-lg-2">
+                    <!-- News -->
+                    <div class="container showcase-text trix-blue" style="border-bottom: #e2e5e7 solid 1px;">
+                        <h2 style="font-size: 2rem;"><i class="fas fa-newspaper"></i> Fil d'actualités</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @{
+                                ViewBag.TypeOfArticle = "ArticleFinance";
+                                await Html.RenderPartialAsync("../Shared/_Articles");
+                            }
+                        </div>
+                        <div class="col-lg-12">
+                            @{
+                                ViewBag.TypeOfArticle = "ArticleSI";
+                                await Html.RenderPartialAsync("../Shared/_Articles");
+                            }
+                            @*<div class="bg-white">
+                                        <div class="trixell-X">
+                                            <div class="container showcase-text color-SI">
+                                                <h2 class="jaapooki col-lg-10" style=" font-size: 1.5rem"><i class="fas fa-newspaper"></i> Actualite SI</h2>
+                                            </div>
+                                            @foreach (var projets in tab_projets)
+                                            {
+                                                string descriptionBody = projets.Content.MarkdownBodyPart.Markdown;
+                                                string fullDescriptionBody = projets.Content.MarkdownBodyPart.Markdown;
+                                                //Si le texte de l'article est supérieur a 200 caractere alors il est rogné pour l'affichage sur l'accueil
+                                                if (descriptionBody.Length > 200)
+                                                {
+                                                    descriptionBody = descriptionBody.Substring(0, 200);
+                                                }
+                                                <!-- pour chaque article on lui créer un modal(pop-up bootstrap) avec son titre sa description etc-->
+                                                <div class="modal fade" id="projet-@projets.ContentItemId" tabindex="-1" role="dialog" aria-labelledby="projetModal" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="projetModal">@projets.DisplayText</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">@fullDescriptionBody</div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div> cla
+                                                </div>
+                                                <div class="container showcase-text color-SI">
+                                                    <a class="row link-news" data-toggle="modal" href="#projet-@projets.ContentItemId" data-target="#projet-@projets.ContentItemId">
+                                                        <div class="col-lg-12 text-news color-white">
+                                                            <h2>@projets.DisplayText</h2>
+                                                            <p>@descriptionBody<p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            }
+                                            @foreach (var articlesSI in tab_articlesSI)
+                                            {
+                                                string descriptionBody = articlesSI.Content.MarkdownBodyPart.Markdown;
+                                                string fullDescriptionBody = articlesSI.Content.MarkdownBodyPart.Markdown;
+                                                //Si le texte de l'article est supérieur a 200 caractere alors il est rogné pour l'affichage sur l'accueil
+                                                if (descriptionBody.Length > 200)
+                                                {
+                                                    descriptionBody = descriptionBody.Substring(0, 200);
+                                                }
+                                                <!-- pour chaque article on lui créer un modal(pop-up bootstrap) avec son titre sa description etc-->
+                                                <div class="modal fade" id="articleSI-@articlesSI.ContentItemId" tabindex="-1" role="dialog" aria-labelledby="articleSIModal" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="articleSIModal">@articlesSI.DisplayText</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">@fullDescriptionBody</div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="container showcase-text color-SI">
+                                                    <a class="row link-news" data-toggle="modal" href="#articleSI-@articlesSI.ContentItemId" data-target="#articleSI-@articlesSI.ContentItemId">
+                                                        <div class="col-lg-12 text-news color-white">
+                                                            <h2>@articlesSI.DisplayText</h2>
+                                                            <p>@descriptionBody<p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            }
+                                            <!--Renvois sur une page où l'on pourra voir les archives des articles de finance-->
+                                            <div class="container showcase-text">
+                                                <small> <a style="color: rgb(19, 133,203);" href=""><i class="fas fa-newspaper"></i> Archives</a></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</section>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>²
+
+

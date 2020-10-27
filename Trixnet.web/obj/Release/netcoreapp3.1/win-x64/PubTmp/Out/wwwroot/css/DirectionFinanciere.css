@@ -1,0 +1,33 @@
+﻿body {
+   
+
+
+
+   
+}
+.block {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-size: 4em;
+   
+}
+
+p{
+    font-size : 17px;
+}
+
+h2{
+    font-size : 27px;
+}
+
+/*.block-finance {
+    background-image: url("../img/service_finance.jpeg");
+    background-repeat : no-repeat;
+    width : 50%;
+    height : 50%;
+}
+
+.block-SI {
+    background-image: url("../img/SI.jpeg");
+    background-repeat: no-repeat;
+}*/

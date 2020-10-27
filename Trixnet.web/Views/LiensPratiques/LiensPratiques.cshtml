@@ -1,0 +1,217 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var path = "/img/LiensPratiques/";
+    var plan1 = path + "planTrixellThales1.pdf";
+    var plan2 = path + "planTrixellThales2.pdf";
+}
+
+<link rel="stylesheet" href="~/css/LiensPratiques.css">
+<section>
+    <!-- Image Showcases -->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters bg-white">
+                <!-- <div class="col-lg-1 order-lg-1" style="background-color: #f2f5f7;"></div> -->
+                <!-- Section Caroussel /  -->
+                <div class="col-lg-12 order-lg-2">
+                    <!-- Carrousel -->
+                    <header class="page-service page-secretariat text-white text-center" style="padding-top: 9rem; padding-bottom: 7rem;">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-8 order-lg-2 mx-auto">
+                                    <h1 class="mb-5">Liens Pratiques</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- Icons Grid -->
+                    <section class="features-icons bg-light text-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <a href="~/DirectionGenerale/Secretariat/Voyages.cshtml" class="link-picto">
+                                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                            <div class="features-icons-icon d-flex">
+                                                <i class="fas fa-plane m-auto trix-blue"></i>
+                                            </div>
+                                            <h3>Voyages</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                        <div class="features-icons-icon d-flex">
+                                            <i class="fas fa-phone m-auto trix-blue picto"></i>
+                                        </div>
+                                        <h3>Numéros</h3>
+                                    </div>
+                                </div>
+                                <!--Demandes-->
+                                <div class="col-lg-4">
+                                    <div class="modal fade" id="demandes" tabindex="-1" role="dialog" aria-labelledby="demandesModal" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="demandesModal">Demandes (liens faux)</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href="">Demandes Infras / HSE </a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href="">Déclaration préalable à une mission </a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href=""> Bon de sortie de matériel</a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href=""> Demande d'expédition </a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href=""> Réservations équipements</a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href="">Demande de prestation de service</a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href="">Liste de non disclosure agreements (confidentialité)</a>
+                                                    <br />
+                                                    <br />
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#demandes" data-target="#demandes" class="link-picto" data-toggle="modal">
+                                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                            <div class="features-icons-icon d-flex">
+                                                <i class="fab fa-wpforms m-auto trix-blue"></i>
+                                            </div>
+                                            <h3>Demandes</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <a href="~/DirectionGenerale/Secretariat/Documents.cshtml" class="link-picto">
+                                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                            <div class="features-icons-icon d-flex">
+                                                <i class="fas fa-walking m-auto trix-blue"></i>
+                                            </div>
+                                            <h3>Offres d'emploi</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!--Plan Trixell Thales Moiran-->
+                                <div class="col-lg-4">
+                                    <div class="modal fade" id="planTrixellThales" tabindex="-1" role="dialog" aria-labelledby="planTrixellThalesModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="planTrixellThalesModal">Plan TRIXELL THALES</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div>
+                                                        <iframe src="@plan1" width="1000" height="1000"></iframe>
+                                                    </div>
+                                                    <div>
+                                                        <iframe src="@plan2" width="1000" height="1000"></iframe>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#planTrixellThales" data-target="#planTrixellThales" data-toggle="modal" class="link-picto">
+                                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                            <div class="features-icons-icon d-flex">
+                                                <i class="fas fa-map-marked-alt m-auto trix-blue"></i>
+                                            </div>
+                                            <h3>Plans TRIXELL THALES</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="modal fade" id="modeles" tabindex="-1" role="dialog" aria-labelledby="modelesModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modelesModal">Modèles (liens faux)</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href="">Modèle de communication </a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href="">Modèle de compte rendu de réunion </a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href="">Modèle de diaporama PowerPoint</a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href=""> Modèle de fax </a>
+                                                    <br />
+                                                    <br />
+                                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                    <a href=""> Modèle de lettre</a>
+                                                    <br />
+                                                    <br />
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#modeles" data-target="#modeles" class="link-picto" data-toggle="modal">
+                                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                            <div class="features-icons-icon d-flex">
+                                                <i class="fas fa-align-justify m-auto trix-blue"></i>
+                                            </div>
+                                            <h3>Modèles</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- <div class="col-lg-1 order-lg-4" style="background-color: #f2f5f7;"></div> -->
+
+            </div>
+        </div>
+    </section>
+</section>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
