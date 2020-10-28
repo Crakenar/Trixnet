@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Trixnet.web/1.0.0": {
         "dependencies": {
+          "Aspose.Slides.NET": "20.10.0",
           "Microsoft.EntityFrameworkCore": "5.0.0-rc.2.20475.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0-rc.2.20475.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
@@ -389,6 +390,21 @@
         },
         "compile": {
           "lib/netcoreapp2.0/AspNet.Security.OpenIdConnect.Server.dll": {}
+        }
+      },
+      "Aspose.Slides.NET/20.10.0": {
+        "dependencies": {
+          "System.Drawing.Common": "4.7.0",
+          "System.Text.Encoding.CodePages": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aspose.Slides.dll": {
+            "assemblyVersion": "20.10.0.0",
+            "fileVersion": "20.10.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Aspose.Slides.dll": {}
         }
       },
       "Azure.Core/1.2.1": {
@@ -5631,6 +5647,9 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.Win32.SystemEvents": "4.7.0"
+        },
+        "compile": {
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         }
       },
       "System.Dynamic.Runtime/4.3.0": {
@@ -8236,6 +8255,13 @@
       "sha512": "sha512-4UqMSjq5Z7qZwNmVLnIEpYH7PKlsC6lC5qUc3lioBSG41kPGarJEIIM4J5hyBY1gptki0i+2H0jFIri7Z8H4sQ==",
       "path": "aspnet.security.openidconnect.server/2.0.0",
       "hashPath": "aspnet.security.openidconnect.server.2.0.0.nupkg.sha512"
+    },
+    "Aspose.Slides.NET/20.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZVV79fUlrY3gNZT6OSSEBq4zVCsO0s6ynJa/dFvxFnM3jSw1LNcnK/sSsDxjMXnzz5QiwNLaKapEx6JAt/g2/A==",
+      "path": "aspose.slides.net/20.10.0",
+      "hashPath": "aspose.slides.net.20.10.0.nupkg.sha512"
     },
     "Azure.Core/1.2.1": {
       "type": "package",

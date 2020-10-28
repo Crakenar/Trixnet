@@ -9,7 +9,12 @@ using OrchardCore.Admin.Controllers;
 using OrchardCore.Data;
 using OrchardCore.Environment.Shell;
 using SixLabors.ImageSharp;
+
+using System.Text;
+
 using Trixnet.web.Models;
+using Aspose.Slides;
+using System.Drawing;
 
 namespace Trixnet.web.Controllers
 {
@@ -26,6 +31,18 @@ namespace Trixnet.web.Controllers
         public IActionResult Index()
         {
             // var results = _connection.trix_Document.ToList();
+            using (Presentation presentation = new Presentation("C:/Users/BURINDUS44/Documents/Webmaster/Trixnet - Copie/Trixnet.web/Trixnet.web/wwwroot/img/RH/LiensPratiques/Bonnes_pratiques_utilisation_du mail(1).pptx")) 
+            {
+                foreach(ISlide slide in presentation.Slides)
+                {
+                    //Creation d'une image non dimensionnée (max)
+                    Bitmap btm = slide.GetThumbnail(1f, 1f);
+
+                    //Sauvegarde de l'image sur le disque
+                    btm.Save(string.Format("Slide_{0}.jpg", slide.SlideNumber), System.Drawing.Imaging.ImageFormat.Jpeg);
+                    //_connection.Add();
+                }
+            } 
             return View();
         }
 

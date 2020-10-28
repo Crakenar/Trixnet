@@ -705,9 +705,6 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.AssemblyInfoInputs.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.AssemblyInfo.cs
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csproj.CoreCompileInputs.cache
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.RazorAssemblyInfo.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.RazorAssemblyInfo.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.TagHelpers.input.cache
@@ -748,3 +745,7 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.pdb
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.genruntimeconfig.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csprojAssemblyReference.cache
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csproj.CoreCompileInputs.cache
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Aspose.Slides.dll

@@ -23,50 +23,49 @@
         <nav class="navbar navbar-light static-top" style="background-color:rgba(0,51,160,0.7)">
             <div class="container" style="margin-left:-150px">
                 <div class="enteteTrixnet col-lg-2" style="margin-right : -2000px!important">
-                    <a href="/"  style="margin-left : 200px!important">
+                    <a href="/" style="margin-left : 200px!important">
                         <img class="navbar-brand img-navbar" src="~/img/trixell_White.png">
                         <img src="~/img/TrixellSousTitre.png" style="width:12rem">
                     </a>
                 </div>
-                <div class="col-lg-8">                        
-                        <form class="row" asp-controller="Home" asp-action="Annuaire" method="post" target="_blank">
-                            <select class="col-lg-1" name="optionAnnuaire" id="optionAnnuaire">
-                                <option value="Trixell">Trixell</option>
-                                <option value="eDir">eDir</option>
-                            </select>
-                                <input class="form-control searchbar-style col-lg-11" id="" type="text" name="search" placeholder="Recherche dans l'annuaire" />
-                        </form>
-                    </div>
+                <div class="col-lg-8">
+                    <form class="row" asp-controller="Home" asp-action="Annuaire" method="post" target="_blank">
+                        <select class="col-lg-1" name="optionAnnuaire" id="optionAnnuaire">
+                            <option value="Trixell">Trixell</option>
+                            <option value="eDir">eDir</option>
+                        </select>
+                        <input class="form-control searchbar-style col-lg-11" id="" type="text" name="search" placeholder="Recherche dans l'annuaire" />
+                    </form>
                 </div>
-                <!--Fenetre de connexion -->
-                <div class="modal fade" id="connexion" tabindex="-1" role="dialog" aria-labelledby="articleModal" aria-hidden="true" >
-                    <div class="modal-dialog modal-lg" role="document" >
-                        <div class="modal-content" style="background-color : rgb(0,25,80)">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="articleModal" style="color : white;">Page de connexion</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form asp-controller="Connexion" asp-action="login" method="post">
-                                    <!--<input class="form-control" asp-for="Email" placeholder="Email" /> <br />--> <!--asp-for="Email"-->
-                                    <!--<input class="form-control" asp-for="Password" placeholder="Password" /> <br />--> <!--" asp-for="Password"-->
-                                    <button type="submit">Connexion</button>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
+            </div>
+            <!--Fenetre de connexion -->
+            <div class="modal fade" id="connexion" tabindex="-1" role="dialog" aria-labelledby="articleModal" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content" style="background-color : rgb(0,25,80)">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="articleModal" style="color : white;">Page de connexion</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form asp-controller="Connexion" asp-action="login" method="post">
+                                <!--<input class="form-control" asp-for="Email" placeholder="Email" /> <br />--> <!--asp-for="Email"-->
+                                <!--<input class="form-control" asp-for="Password" placeholder="Password" /> <br />--> <!--" asp-for="Password"-->
+                                <button type="submit">Connexion</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
-                <!--Ici c'est l'affichage simple de la page HTML-->
-                <div class="col-lg-2">
-                    <a class="btn btn-primary trix-button" data-toggle="modal" href="#connexion" data-target="#connexion">
-                        Se connecter
-                    </a>
-                </div>
+            </div>
+            <!--Ici c'est l'affichage simple de la page HTML-->
+            <div class="col-lg-2">
+                <a class="btn btn-primary trix-button" data-toggle="modal" href="#connexion" data-target="#connexion">
+                    Se connecter
+                </a>
             </div>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,51,160,0.7); padding: 0;">
@@ -92,21 +91,21 @@
                                     <li><a class="dropdown-item" href="~/DirectionGenerale/RH/RH.cshtml">Ressources Humaines</a></li>
                                 </ul>
                             </li>
-                            <a class="dropdown-item dropdownMultiple" href="~/DirectionGenerale/IndexDirectionGenerale.cshtml"></a>
-                            <a class="dropdown-item" href="~/DirectionIndustrielle/Index.cshtml">Direction Industrielle</a>
-                            <a class="dropdown-item" href="~/DirectionTechnique/Index.cshtml">Direction Technique</a>
+                            <li><a class="dropdown-item dropdownMultiple" href="~/DirectionGenerale/IndexDirectionGenerale.cshtml"></a></li>
+                            <li><a class="dropdown-item" href="~/DirectionIndustrielle/Index.cshtml">Direction Industrielle</a></li>
+                            <li><a class="dropdown-item" href="~/DirectionTechnique/Index.cshtml">Direction Technique</a></li>
                             <li class="dropdown-submenu dropright">
                                 <a class="dropdown-item dropdown-toggle" href="~/DirectionFinanciere/Index.cshtml">Direction Financière</a>
                                 @* <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"></button>*@
                                 <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="~/DirectionFinanciere/Index.cshtml">Direction Financière</a>
+                                    <li><a class="dropdown-item" href="~/DirectionFinanciere/Index.cshtml">Direction Financière</a></li>
                                     <li><a class="dropdown-item" href="~/DirectionFinanciere/SI/Index.cshtml">Systeme Information</a></li>
                                     <li><a class="dropdown-item" href="~/DirectionFinanciere/Financiere/Index.cshtml">Finance</a></li>
                                 </ul>
                             </li>
 
-                            <a class="dropdown-item" href="~/DirectionSupplyChain/Index.cshtml">Direction Supply Chaine</a>
-                            <a class="dropdown-item" href="~/DirectionQualite/Index.cshtml">Direction Qualité</a>
+                           <li><a class="dropdown-item" href="~/DirectionSupplyChain/Index.cshtml">Direction Supply Chaine</a></li>
+                            <li><a class="dropdown-item" href="~/DirectionQualite/Index.cshtml">Direction Qualité</a> </li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -115,8 +114,16 @@
                     <li class="nav-item">
                         <a href="~/Formulaires/Formulaire.cshtml" class="nav-link">Formulaires</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://intranet.peopleonline.corp.thales">People Online</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           Mes Applications
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://intranet.peopleonline.corp.thales" target="_blank">People Online</a></li>
+                            <li><a class="dropdown-item" href="https://kiss.service-now.com/ssp" target="_blank">Kiss</a></li>
+                            <li><a class="dropdown-item" href="https://wd3.myworkday.com/wday/authgwy/thales/login.html" target="_blank">Workday</a></li>
+                            <li><a class="dropdown-item" href="https://wiki.copr.thales/dashboard.action" target="_blank">Thales Wiki</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Nos Produits</a>

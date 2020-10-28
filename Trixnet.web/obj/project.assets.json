@@ -80,6 +80,19 @@
           "lib/netcoreapp2.0/AspNet.Security.OpenIdConnect.Server.dll": {}
         }
       },
+      "Aspose.Slides.NET/20.10.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Aspose.Slides.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aspose.Slides.dll": {}
+        }
+      },
       "Azure.Core/1.2.1": {
         "type": "package",
         "dependencies": {
@@ -5870,7 +5883,7 @@
           "Microsoft.Win32.SystemEvents": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
@@ -7475,6 +7488,29 @@
         "lib/netcoreapp2.0/AspNet.Security.OpenIdConnect.Server.xml",
         "lib/netstandard2.0/AspNet.Security.OpenIdConnect.Server.dll",
         "lib/netstandard2.0/AspNet.Security.OpenIdConnect.Server.xml"
+      ]
+    },
+    "Aspose.Slides.NET/20.10.0": {
+      "sha512": "ZVV79fUlrY3gNZT6OSSEBq4zVCsO0s6ynJa/dFvxFnM3jSw1LNcnK/sSsDxjMXnzz5QiwNLaKapEx6JAt/g2/A==",
+      "type": "package",
+      "path": "aspose.slides.net/20.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Aspose_End-User-License-Agreement.txt",
+        "Help/Aspose.Slides.chm",
+        "aspose.slides.net.20.10.0.nupkg.sha512",
+        "aspose.slides.net.nuspec",
+        "aspose_slides-for-net-min.png",
+        "lib/MonoAndroid9/Aspose.Slides.Droid.dll",
+        "lib/net2.0/Aspose.Slides.dll",
+        "lib/net2.0/Aspose.Slides.xml",
+        "lib/net3.5-client/Aspose.Slides.dll",
+        "lib/net3.5-client/Aspose.Slides.xml",
+        "lib/net4.0-client/Aspose.Slides.dll",
+        "lib/net4.0-client/Aspose.Slides.xml",
+        "lib/netstandard2.0/Aspose.Slides.dll",
+        "thirdpartylicenses.Aspose.Slides.for.NET.pdf"
       ]
     },
     "Azure.Core/1.2.1": {
@@ -19004,6 +19040,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Aspose.Slides.NET >= 20.10.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0-rc.2.20475.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0-rc.2.20475.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
@@ -19049,6 +19086,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Aspose.Slides.NET": {
+            "target": "Package",
+            "version": "[20.10.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.0-rc.2.20475.6, )"

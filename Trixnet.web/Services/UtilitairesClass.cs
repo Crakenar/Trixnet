@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrchardCore.ContentManagement;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,10 +68,15 @@ namespace Trixnet.web.Services
 
 
         /// <summary>
-        /// 
+        /// Cette fonction permet de determiner si un documents est un pdf, excel, word...
+        /// On pourrait utiliser map = new Dictionnary <string,string>() {
+        ///     {".pdf","/img/pdf.jpeg"}
+        ///     ....
+        /// }
+        /// pour ensuite envoyer une image avec son icone et son lien pour telecharger
         /// </summary>
         /// <param name="Files"></param>
-        /// <returns></returns>
+        /// <returns>Object(image)</returns>
         /// 
         public List<Object> setDocumentsArticle(Object Files)
         {
@@ -113,21 +119,50 @@ namespace Trixnet.web.Services
             return arr;
         }
 
-        public List<string> test(string x)
+        /// <summary>
+        /// Teo Berguerre 27 Octobre 2020
+        /// Cette fonction recupere l'image princpale d'un article en fonction de son type : ArticleRH, ArticleSI...
+        ///  
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="articles"></param>
+        /// <returns>List<string>()</returns>
+
+        public List<string> getImagePrincipale(string type,ContentItem articles)
         {
-            switch (x)
+            var map = new Dictionary<string, List<string>>();
+            List<string> imagesPrincipales = new List<string>();
+            string defaultImage = "../../img/bg-masthead.jpg";
+            switch (type)
             {
                 case "Article":
+                    map.Add(type, setImageTitleArticle(articles.Content.Article.Media.Paths));
                     break;
                 case "ArticleSecretariat":
+                    map.Add(type, setImageTitleArticle(articles.Content.ArticleSecretariat.MediaArticle.Paths));
                     break;
                 case "ArticleRH":
+                    map.Add(type, setImageTitleArticle(articles.Content.ArticleRH.MediaArticle.Paths));
                     break;
                 case "ArticleSI":
+                    map.Add(type, setImageTitleArticle(articles.Content.ArticleSI.MediaArticle.Paths));
                     break;
             }
-            return null;
+            if (map.TryGetValue(type, out List<string> commande))
+            {
+                if (commande.Count == 0)
+                {
+                    imagesPrincipales.Add(defaultImage);
+                }
+                else
+                {
+                    imagesPrincipales = commande;
+                }
+            }
+            return imagesPrincipales;
         }
+
+     
     }
 }
 
