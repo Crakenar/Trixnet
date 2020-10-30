@@ -80,19 +80,6 @@
           "lib/netcoreapp2.0/AspNet.Security.OpenIdConnect.Server.dll": {}
         }
       },
-      "Aspose.Slides.NET/20.10.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.5.0",
-          "System.Text.Encoding.CodePages": "4.4.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Aspose.Slides.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Aspose.Slides.dll": {}
-        }
-      },
       "Azure.Core/1.2.1": {
         "type": "package",
         "dependencies": {
@@ -154,6 +141,18 @@
         },
         "runtime": {
           "lib/netstandard1.5/Castle.Core.dll": {}
+        }
+      },
+      "ConvertApi/3.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/ConvertApi.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ConvertApi.dll": {}
         }
       },
       "CryptoHelper/3.0.2": {
@@ -354,6 +353,45 @@
         },
         "runtime": {
           "lib/netstandard2.1/Lucene.Net.Sandbox.dll": {}
+        }
+      },
+      "Magick.NET-Q8-AnyCPU/7.22.0": {
+        "type": "package",
+        "dependencies": {
+          "Magick.NET.Core": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard20/Magick.NET-Q8-AnyCPU.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard20/Magick.NET-Q8-AnyCPU.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/Magick.Native-Q8-x64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/Magick.Native-Q8-x64.dll.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/Magick.Native-Q8-x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/Magick.Native-Q8-x86.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Magick.NET.Core/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard20/Magick.NET.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard20/Magick.NET.Core.dll": {}
         }
       },
       "MailKit/2.6.0": {
@@ -5883,7 +5921,7 @@
           "Microsoft.Win32.SystemEvents": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
+          "ref/netcoreapp3.0/_._": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
@@ -7490,29 +7528,6 @@
         "lib/netstandard2.0/AspNet.Security.OpenIdConnect.Server.xml"
       ]
     },
-    "Aspose.Slides.NET/20.10.0": {
-      "sha512": "ZVV79fUlrY3gNZT6OSSEBq4zVCsO0s6ynJa/dFvxFnM3jSw1LNcnK/sSsDxjMXnzz5QiwNLaKapEx6JAt/g2/A==",
-      "type": "package",
-      "path": "aspose.slides.net/20.10.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Aspose_End-User-License-Agreement.txt",
-        "Help/Aspose.Slides.chm",
-        "aspose.slides.net.20.10.0.nupkg.sha512",
-        "aspose.slides.net.nuspec",
-        "aspose_slides-for-net-min.png",
-        "lib/MonoAndroid9/Aspose.Slides.Droid.dll",
-        "lib/net2.0/Aspose.Slides.dll",
-        "lib/net2.0/Aspose.Slides.xml",
-        "lib/net3.5-client/Aspose.Slides.dll",
-        "lib/net3.5-client/Aspose.Slides.xml",
-        "lib/net4.0-client/Aspose.Slides.dll",
-        "lib/net4.0-client/Aspose.Slides.xml",
-        "lib/netstandard2.0/Aspose.Slides.dll",
-        "thirdpartylicenses.Aspose.Slides.for.NET.pdf"
-      ]
-    },
     "Azure.Core/1.2.1": {
       "sha512": "U0zPuK0/ssiz0gvli1/sslqPKANZpCa7muDM3K4Vj6Pf6YKYNnpByQsnqFQTYafzr6cQ41mr1nM07I8jOm5UkA==",
       "type": "package",
@@ -7584,6 +7599,19 @@
         "lib/netstandard1.5/Castle.Core.dll",
         "lib/netstandard1.5/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "ConvertApi/3.0.5": {
+      "sha512": "tmhtuOH/lG+qSpFobTVEA0p4+GU/Hylnzn5ddRDhdyWGY3Er7yWrJ2l0FSdCkxKHVyFHtlT1VfIKKxjzYddFjQ==",
+      "type": "package",
+      "path": "convertapi/3.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "convertapi.3.0.5.nupkg.sha512",
+        "convertapi.nuspec",
+        "lib/netcoreapp3.1/ConvertApi.dll",
+        "lib/netstandard2.0/ConvertApi.dll"
       ]
     },
     "CryptoHelper/3.0.2": {
@@ -7867,6 +7895,52 @@
         "lucene-net-icon-128x128.png",
         "lucene.net.sandbox.4.8.0-beta00008.nupkg.sha512",
         "lucene.net.sandbox.nuspec"
+      ]
+    },
+    "Magick.NET-Q8-AnyCPU/7.22.0": {
+      "sha512": "2khvIJZxrKJNY0mZQeQNChG+qZuYwAHugcwhPKoERnMWU/QOBDBUZEqimUWmnvKZXmu9kTGmXlN0ob3G1azHZg==",
+      "type": "package",
+      "path": "magick.net-q8-anycpu/7.22.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Copyright.txt",
+        "Magick.NET.icon.png",
+        "lib/net20/Magick.NET-Q8-AnyCPU.dll",
+        "lib/net20/Magick.NET-Q8-AnyCPU.xml",
+        "lib/net40/Magick.NET-Q8-AnyCPU.dll",
+        "lib/net40/Magick.NET-Q8-AnyCPU.xml",
+        "lib/netstandard13/Magick.NET-Q8-AnyCPU.dll",
+        "lib/netstandard13/Magick.NET-Q8-AnyCPU.xml",
+        "lib/netstandard20/Magick.NET-Q8-AnyCPU.dll",
+        "lib/netstandard20/Magick.NET-Q8-AnyCPU.xml",
+        "magick.net-q8-anycpu.7.22.0.nupkg.sha512",
+        "magick.net-q8-anycpu.nuspec",
+        "runtimes/linux-x64/native/Magick.Native-Q8-x64.dll.so",
+        "runtimes/osx-x64/native/Magick.Native-Q8-x64.dll.dylib",
+        "runtimes/win-x64/native/Magick.Native-Q8-x64.dll",
+        "runtimes/win-x86/native/Magick.Native-Q8-x86.dll"
+      ]
+    },
+    "Magick.NET.Core/5.0.0": {
+      "sha512": "w43b+Wk1Il8+Xe1//SRZMsGgXJRzVB0ZwcbQimfx4bUzzBhrHHJ45dgYg1izWxaWV34sJp6N26j0viwwCQsGtA==",
+      "type": "package",
+      "path": "magick.net.core/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Copyright.txt",
+        "Magick.NET.icon.png",
+        "lib/net20/Magick.NET.Core.dll",
+        "lib/net20/Magick.NET.Core.xml",
+        "lib/net40/Magick.NET.Core.dll",
+        "lib/net40/Magick.NET.Core.xml",
+        "lib/netstandard13/Magick.NET.Core.dll",
+        "lib/netstandard13/Magick.NET.Core.xml",
+        "lib/netstandard20/Magick.NET.Core.dll",
+        "lib/netstandard20/Magick.NET.Core.xml",
+        "magick.net.core.5.0.0.nupkg.sha512",
+        "magick.net.core.nuspec"
       ]
     },
     "MailKit/2.6.0": {
@@ -19040,7 +19114,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Aspose.Slides.NET >= 20.10.0",
+      "ConvertApi >= 3.0.5",
+      "Magick.NET-Q8-AnyCPU >= 7.22.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0-rc.2.20475.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0-rc.2.20475.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
@@ -19086,9 +19161,13 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
-          "Aspose.Slides.NET": {
+          "ConvertApi": {
             "target": "Package",
-            "version": "[20.10.0, )"
+            "version": "[3.0.5, )"
+          },
+          "Magick.NET-Q8-AnyCPU": {
+            "target": "Package",
+            "version": "[7.22.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -19133,7 +19212,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -10,11 +10,8 @@ using OrchardCore.Data;
 using OrchardCore.Environment.Shell;
 using SixLabors.ImageSharp;
 
-using System.Text;
-
 using Trixnet.web.Models;
-using Aspose.Slides;
-using System.Drawing;
+using Lucene.Net.Store;
 
 namespace Trixnet.web.Controllers
 {
@@ -25,24 +22,29 @@ namespace Trixnet.web.Controllers
         public HomeController(ConnectionStringClass connection)
         {
             _connection = connection;
+
+            /* Transforme le .ppt en multiples png (1 slide = 1 image)
+             Probleme :
+             Chemin en dur / Objectif => lier cela à OrchardCore ?
+             Combien de powerpoint doit-on afficher ? Si c'est 1 seul créer par l'admin ou il met plusieurs ppt et je dois effectuer l'opération ?             
+             */
+            string typeSortie = "GIF";
+            string pathDir = "wwwroot/img/Profiles/";
+            string path = "C:\\Users\\BURINDUS44\\Documents\\Webmaster\\Trixnet - Copie\\Trixnet.web\\Trixnet.web\\wwwroot\\img\\Profiles\\";
+            string ppt = "C:/Users/BURINDUS44/Documents/Webmaster/Trixnet - Copie/Trixnet.web/Trixnet.web/wwwroot/img/RH/LiensPratiques/Bonnes_pratiques_utilisation_du mail(1).pptx";
+            string ppt2 = "C:\\Users\\BURINDUS44\\Documents\\Webmaster\\Trixnet - Copie\\Trixnet.web\\Trixnet.web\\wwwroot\\img\\RH\\LiensPratiques\\HVI-2013312_V2(1).ppt";
+            Services.ConvertFilesClass utils = new Services.ConvertFilesClass();
+            utils.ConvertFiles(ppt2, path, typeSortie);
         }
 
         [Route("/")]
         public IActionResult Index()
         {
             // var results = _connection.trix_Document.ToList();
-            using (Presentation presentation = new Presentation("C:/Users/BURINDUS44/Documents/Webmaster/Trixnet - Copie/Trixnet.web/Trixnet.web/wwwroot/img/RH/LiensPratiques/Bonnes_pratiques_utilisation_du mail(1).pptx")) 
-            {
-                foreach(ISlide slide in presentation.Slides)
-                {
-                    //Creation d'une image non dimensionnée (max)
-                    Bitmap btm = slide.GetThumbnail(1f, 1f);
-
-                    //Sauvegarde de l'image sur le disque
-                    btm.Save(string.Format("Slide_{0}.jpg", slide.SlideNumber), System.Drawing.Imaging.ImageFormat.Jpeg);
-                    //_connection.Add();
-                }
-            } 
+            //recuperer les images pour le caroussel
+            string pathDir = "wwwroot/img/Profiles/";
+            string[] files = System.IO.Directory.GetFiles(pathDir);
+            ViewBag.ImageCaroussel = files; //pas ouf, à refaire ???
             return View();
         }
 

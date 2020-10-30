@@ -508,3 +508,16 @@ body{
 .enteteTrixnet {
     display: flex;
 }
+
+
+
+
+/*
+Teo berguerre
+
+
+*/
+.imgSectionCaroussel {
+    height: 900px;
+    /*object-fit: contain;*/
+}

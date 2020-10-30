@@ -2,8 +2,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace Trixnet.web.Services
 {
@@ -20,7 +21,7 @@ namespace Trixnet.web.Services
             public string downloadLink { get; set; }
             public string nameDoc { get; set; }
         }
-        
+
 
         /// <summary>
         /// Cette fonction permet d'afficher l'image principale d'un article.
@@ -36,7 +37,7 @@ namespace Trixnet.web.Services
         {
             List<string> arr = new List<string>();
             IEnumerable myFiles = File as IEnumerable;
-            if(myFiles == null)
+            if (myFiles == null)
             {
                 arr.Add("img/bg-masthead.jpg");
             }
@@ -62,7 +63,7 @@ namespace Trixnet.web.Services
                     arr.Add(imgShow);
                 }
             }
-            
+
             return arr;
         }
 
@@ -82,7 +83,7 @@ namespace Trixnet.web.Services
         {
             List<Object> arr = new List<Object>();
             IEnumerable myDocuments = Files as IEnumerable;
-            if(myDocuments == null)
+            if (myDocuments == null)
             {
             }
             else
@@ -115,7 +116,7 @@ namespace Trixnet.web.Services
                     arr.Add(new image { imageShow = docShow, downloadLink = path + docs, nameDoc = docs.ToString() });
                 }
             }
-            
+
             return arr;
         }
 
@@ -128,7 +129,7 @@ namespace Trixnet.web.Services
         /// <param name="articles"></param>
         /// <returns>List<string>()</returns>
 
-        public List<string> getImagePrincipale(string type,ContentItem articles)
+        public List<string> getImagePrincipale(string type, ContentItem articles)
         {
             var map = new Dictionary<string, List<string>>();
             List<string> imagesPrincipales = new List<string>();
@@ -161,8 +162,6 @@ namespace Trixnet.web.Services
             }
             return imagesPrincipales;
         }
-
-     
     }
 }
 

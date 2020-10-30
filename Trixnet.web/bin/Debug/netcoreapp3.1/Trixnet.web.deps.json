@@ -24,13 +24,16 @@
     ".NETCoreApp,Version=v3.1": {
       "Trixnet.web/1.0.0": {
         "dependencies": {
-          "Aspose.Slides.NET": "20.10.0",
+          "ConvertApi": "3.0.5",
+          "Magick.NET-Q8-AnyCPU": "7.22.0",
           "Microsoft.EntityFrameworkCore": "5.0.0-rc.2.20475.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0-rc.2.20475.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
           "OrchardCore": "1.0.0-rc2-13450",
           "OrchardCore.Application.Cms.Targets": "1.0.0-rc2-13450",
           "jQuery": "3.5.1",
+          "Interop.Microsoft.Office.Core": "2.5.0.0",
+          "Interop.Microsoft.Office.Interop.PowerPoint": "2.10.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -392,21 +395,6 @@
           "lib/netcoreapp2.0/AspNet.Security.OpenIdConnect.Server.dll": {}
         }
       },
-      "Aspose.Slides.NET/20.10.0": {
-        "dependencies": {
-          "System.Drawing.Common": "4.7.0",
-          "System.Text.Encoding.CodePages": "4.7.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Aspose.Slides.dll": {
-            "assemblyVersion": "20.10.0.0",
-            "fileVersion": "20.10.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Aspose.Slides.dll": {}
-        }
-      },
       "Azure.Core/1.2.1": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
@@ -476,6 +464,20 @@
         },
         "compile": {
           "lib/netstandard1.5/Castle.Core.dll": {}
+        }
+      },
+      "ConvertApi/3.0.5": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ConvertApi.dll": {
+            "assemblyVersion": "3.0.5.0",
+            "fileVersion": "3.0.5.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/ConvertApi.dll": {}
         }
       },
       "CryptoHelper/3.0.2": {
@@ -704,6 +706,53 @@
         },
         "compile": {
           "lib/netstandard2.1/Lucene.Net.Sandbox.dll": {}
+        }
+      },
+      "Magick.NET-Q8-AnyCPU/7.22.0": {
+        "dependencies": {
+          "Magick.NET.Core": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard20/Magick.NET-Q8-AnyCPU.dll": {
+            "assemblyVersion": "7.22.0.0",
+            "fileVersion": "7.22.0.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/Magick.Native-Q8-x64.dll.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/Magick.Native-Q8-x64.dll.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/Magick.Native-Q8-x64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "7.0.10.30"
+          },
+          "runtimes/win-x86/native/Magick.Native-Q8-x86.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "7.0.10.30"
+          }
+        },
+        "compile": {
+          "lib/netstandard20/Magick.NET-Q8-AnyCPU.dll": {}
+        }
+      },
+      "Magick.NET.Core/5.0.0": {
+        "runtime": {
+          "lib/netstandard20/Magick.NET.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard20/Magick.NET.Core.dll": {}
         }
       },
       "MailKit/2.6.0": {
@@ -5647,9 +5696,6 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.Win32.SystemEvents": "4.7.0"
-        },
-        "compile": {
-          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         }
       },
       "System.Dynamic.Runtime/4.3.0": {
@@ -6626,6 +6672,28 @@
         },
         "compile": {
           "lib/netstandard2.0/YesSql.Provider.SqlServer.dll": {}
+        }
+      },
+      "Interop.Microsoft.Office.Core/2.5.0.0": {
+        "runtime": {
+          "Interop.Microsoft.Office.Core.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        },
+        "compile": {
+          "Interop.Microsoft.Office.Core.dll": {}
+        }
+      },
+      "Interop.Microsoft.Office.Interop.PowerPoint/2.10.0.0": {
+        "runtime": {
+          "Interop.Microsoft.Office.Interop.PowerPoint.dll": {
+            "assemblyVersion": "2.10.0.0",
+            "fileVersion": "2.10.0.0"
+          }
+        },
+        "compile": {
+          "Interop.Microsoft.Office.Interop.PowerPoint.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -8256,13 +8324,6 @@
       "path": "aspnet.security.openidconnect.server/2.0.0",
       "hashPath": "aspnet.security.openidconnect.server.2.0.0.nupkg.sha512"
     },
-    "Aspose.Slides.NET/20.10.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ZVV79fUlrY3gNZT6OSSEBq4zVCsO0s6ynJa/dFvxFnM3jSw1LNcnK/sSsDxjMXnzz5QiwNLaKapEx6JAt/g2/A==",
-      "path": "aspose.slides.net/20.10.0",
-      "hashPath": "aspose.slides.net.20.10.0.nupkg.sha512"
-    },
     "Azure.Core/1.2.1": {
       "type": "package",
       "serviceable": true,
@@ -8290,6 +8351,13 @@
       "sha512": "sha512-zanbjWC0Y05gbx4eGXkzVycOQqVOFVeCjVsDSyuao9P4mtN1w3WxxTo193NGC7j3o2u3AJRswaoC6hEbnGACnQ==",
       "path": "castle.core/4.4.1",
       "hashPath": "castle.core.4.4.1.nupkg.sha512"
+    },
+    "ConvertApi/3.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tmhtuOH/lG+qSpFobTVEA0p4+GU/Hylnzn5ddRDhdyWGY3Er7yWrJ2l0FSdCkxKHVyFHtlT1VfIKKxjzYddFjQ==",
+      "path": "convertapi/3.0.5",
+      "hashPath": "convertapi.3.0.5.nupkg.sha512"
     },
     "CryptoHelper/3.0.2": {
       "type": "package",
@@ -8402,6 +8470,20 @@
       "sha512": "sha512-VeZdHew59pWzAHISKkwBvbNqTovzqSo1Oi5zX5zCSkyt4xauyRjEP8tQ60JHu2C7TOtksb2GEb9DwpY2DHBo7Q==",
       "path": "lucene.net.sandbox/4.8.0-beta00008",
       "hashPath": "lucene.net.sandbox.4.8.0-beta00008.nupkg.sha512"
+    },
+    "Magick.NET-Q8-AnyCPU/7.22.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2khvIJZxrKJNY0mZQeQNChG+qZuYwAHugcwhPKoERnMWU/QOBDBUZEqimUWmnvKZXmu9kTGmXlN0ob3G1azHZg==",
+      "path": "magick.net-q8-anycpu/7.22.0",
+      "hashPath": "magick.net-q8-anycpu.7.22.0.nupkg.sha512"
+    },
+    "Magick.NET.Core/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w43b+Wk1Il8+Xe1//SRZMsGgXJRzVB0ZwcbQimfx4bUzzBhrHHJ45dgYg1izWxaWV34sJp6N26j0viwwCQsGtA==",
+      "path": "magick.net.core/5.0.0",
+      "hashPath": "magick.net.core.5.0.0.nupkg.sha512"
     },
     "MailKit/2.6.0": {
       "type": "package",
@@ -11230,6 +11312,16 @@
       "sha512": "sha512-2OY0w7sJ9OIzlNFzQ1+4G817tla0iriHmaGZJyj9NC9Ylns5fJc7n4x2YvIUfnpTo0NzLWNr7Ufw+J578qPxQw==",
       "path": "yessql.provider.sqlserver/1.0.0-beta-1481",
       "hashPath": "yessql.provider.sqlserver.1.0.0-beta-1481.nupkg.sha512"
+    },
+    "Interop.Microsoft.Office.Core/2.5.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Interop.Microsoft.Office.Interop.PowerPoint/2.10.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",
