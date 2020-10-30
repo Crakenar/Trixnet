@@ -5,6 +5,7 @@
 
 *.scss
 Localization/*
+wwwroot/img/Profiles/*.gif
 
 # User-specific files
 *.rsuser

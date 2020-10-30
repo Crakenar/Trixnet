@@ -28,7 +28,7 @@ namespace Trixnet.web.Controllers
              Chemin en dur / Objectif => lier cela à OrchardCore ?
              Combien de powerpoint doit-on afficher ? Si c'est 1 seul créer par l'admin ou il met plusieurs ppt et je dois effectuer l'opération ?             
              */
-            string typeSortie = "GIF";
+            string typeSortie = "gif";
             string pathDir = "wwwroot/img/Profiles/";
             string path = "C:\\Users\\BURINDUS44\\Documents\\Webmaster\\Trixnet - Copie\\Trixnet.web\\Trixnet.web\\wwwroot\\img\\Profiles\\";
             string ppt = "C:/Users/BURINDUS44/Documents/Webmaster/Trixnet - Copie/Trixnet.web/Trixnet.web/wwwroot/img/RH/LiensPratiques/Bonnes_pratiques_utilisation_du mail(1).pptx";
