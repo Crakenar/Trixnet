@@ -17,17 +17,22 @@
     }
 
 
-
+    string path = "wwwroot/img/RH/";
     //récuperer l'ensemble des accords Trixell
-    string pathDirAccords = "wwwroot/img/RH/Accords_Applicables/Accords_Trixell_compressed/";
+    string pathDirAccords = path + "Accords_Applicables/Accords_Trixell_compressed/";
     //Récupérer l'ensemble des conventions
-    string pathDirConvention = "wwwroot/img/RH/Accords_Applicables/Convention_compressed/";
+    string pathDirConvention = path + "Accords_Applicables/Convention_compressed/";
 
-    string pathDirFormation = "wwwroot/img/RH/Formations/";
+    string pathDirFormation = path + "Formations/";
 
-    string pathDirFichesPratiques = "wwwroot/img/RH/Guides_Formulaires/FichesPratiques/";
-    string pathDirFormulaire = "wwwroot/img/RH/Guides_Formulaires/Formulaires/";
-    string pathDirGuidesPrat = "wwwroot/img/RH/Guides_Formulaires/GuidesPratiques/";
+    string pathDirFichesPratiques = path + "Guides_Formulaires/FichesPratiques/";
+    string pathDirFormulaire = path + "Guides_Formulaires/Formulaires/";
+    string pathDirGuidesPrat = path + "Guides_Formulaires/GuidesPratiques/";
+    string pathDirIRP = path + "IRP/";
+    string pathDirActionLogement = path + "Action_Logement/";
+
+    string pathDirTeletravail = path + "Teletravail/";
+    string pathDirQVT = path + "QVT/";
 }
 <link rel="stylesheet" href="~/css/RH.css">
 <!-- Image Showcases -->
@@ -490,26 +495,10 @@
             <!-- QVT -->
             <div class="col-lg-6">
                 <div class="modal fade" id="QVT" tabindex="-1" role="dialog" aria-labelledby="QVTModal" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="QVTModal">Qualité de Vie au Travail</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                <a href="~/img/RH/CEVRES_ExercicesTMS_compressed.pdf" target="_blank">Cevres Santé - Exercices de prévention des TMS</a>
-                                <br />
-                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                <a href="~/img/RH/Bonnes_pratiques_utilisation_du mail_compressed.pptx">Bonnes pratiques de l'utilisation du mail (lien faux) </a>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
+                   @{ 
+                       ViewBag.Title = "Qualité de Vie au Travail";
+                       await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirQVT);
+                   }
                 </div>
                 <div class="col-lg-12">
                     <div class="showcase-text" style="padding: 0">
@@ -525,26 +514,10 @@
                 </div>
                 <!-- Teletravail -->
                 <div class="modal fade" id="teletravail" tabindex="-1" role="dialog" aria-labelledby="teletravailModal" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="teletravailModal">Télétravail</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                <a href="~/img/RH/Teletravail/Accord Télétravail Trixell_compressed.pdf" target="_blank">Accord Télétravail</a>
-                                <br />
-                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                <a href="~/img/RH/Teletravail/L'ESSENTIEL DU TELETRAVAIL TRIXELL_compressed.pdf" target="_blank">Essentiel du télétravail</a>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
+                   @{
+                       ViewBag.Title = "Télétravail";
+                       await Html.RenderPartialAsync("../Shared/_ListDocsModal",pathDirTeletravail);
+                   }
                 </div>
                 <div class="col-lg-12">
                     <div class="showcase-text" style="padding: 0; margin-top:20px">
@@ -591,26 +564,10 @@
                     <div class="col-lg-6">
                         <!-- pour chaque article on lui créer un modal(pop-up bootstrap) avec son titre sa description etc-->
                         <div class="modal fade" id="actionLogement" tabindex="-1" role="dialog" aria-labelledby="articleModal" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="articleModal">Action Logement</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                        <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/FICHEINTERLOCUTEUR.pdf">Vos contacts (lien faux) </a>
-                                        <br />
-                                        <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                        <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf">Les services proposés (lien faux) </a>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
+                            @{ 
+                                ViewBag.Title = "Action Logement";
+                                await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirActionLogement);
+                            }
                         </div>
                         <!--Ici c'est l'affichage simple de la page HTML-->
                         <div class="showcase-text" style="padding: 0">
@@ -628,6 +585,13 @@
             </div>
         </div>
         <div class="row no-gutters">
+          
+            <div class="modal fade" id="IRP" tabindex="-1" role="dialog" aria-labelledby="IRPModal" aria-hidden="true">
+                @{
+                    ViewBag.Title = "Instance Représentation du Personnel (IRP)";
+                    await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirIRP);
+                }
+            </div>
             <!-- IRP -->
             <div class="col-lg-6">
                 <div class="showcase-text" style="padding: 0">
@@ -635,7 +599,7 @@
                         <div class="titreSection">
                             <h2 class="jaapooki text-sections"> IRP </h2>
                         </div>
-                        <a href="index.html" class="row" style="padding: 10px;">
+                        <a href="#IRP" data-toggle="modal" data-target="#IRP" class="row" style="padding: 10px;">
                             <img class="col-lg-10" src="~/img/RH/irp.gif" height="300" loading="lazy">
                         </a>
                     </div>
