@@ -162,6 +162,7 @@ namespace Trixnet.web.Services
             }
             return imagesPrincipales;
         }
+
     }
 }
 

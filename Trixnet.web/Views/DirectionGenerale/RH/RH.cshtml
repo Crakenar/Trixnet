@@ -3,6 +3,32 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
+@{
+    /////
+    ///Il faudrait une fonction du style
+    /// public string[] function(object sender, EventArgs e,string path){
+    ///  return System.IO.Directory.GetFiles(path);
+    /// }
+    ///
+    /////
+    string[] getFilesFromDirectory_Click(object sender, EventArgs e, string path)
+    {
+        return System.IO.Directory.GetFiles(path);
+    }
+
+
+
+    //récuperer l'ensemble des accords Trixell
+    string pathDirAccords = "wwwroot/img/RH/Accords_Applicables/Accords_Trixell_compressed/";
+    //Récupérer l'ensemble des conventions
+    string pathDirConvention = "wwwroot/img/RH/Accords_Applicables/Convention_compressed/";
+
+    string pathDirFormation = "wwwroot/img/RH/Formations/";
+
+    string pathDirFichesPratiques = "wwwroot/img/RH/Guides_Formulaires/FichesPratiques/";
+    string pathDirFormulaire = "wwwroot/img/RH/Guides_Formulaires/Formulaires/";
+    string pathDirGuidesPrat = "wwwroot/img/RH/Guides_Formulaires/GuidesPratiques/";
+}
 <link rel="stylesheet" href="~/css/RH.css">
 <!-- Image Showcases -->
 <section class="showcase">
@@ -79,7 +105,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-3 showcase-text">
-                                    <a href="~/img/RH/LiensPratiques/Bonnes_pratiques_utilisation_du mail(1).pptx" class=" link-news">
+                                    <a href="~/img/RH/Bonnes_pratiques_utilisation_du mail_compressed.pptx" class=" link-news">
                                         <div class="text-news ">
                                             <span class="link">Bonnes pratique de l'utilisation des mails</span>
                                         </div>
@@ -115,75 +141,14 @@
     <div class="container-fluid p-0 bg-light" style="padding-top: 32px">
         <div class="row no-gutters">
             <div class="col-lg-5">
-                <!-- Section -->
+                <!-- Formation -->
                 <div class="col-lg-12">
                     <!-- pour chaque article on lui créer un modal(pop-up bootstrap) avec son titre sa description etc-->
                     <div class="modal fade" id="espaceFormation" tabindex="-1" role="dialog" aria-labelledby="formationModal" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="formationModal">Espace Formation (liens faux)</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="showcase-text" style="padding: 0">
-                                        <div class="SectionHB SectionGD PageSection">
-                                            <div class="titreSection">
-                                                <h6 class="jaapooki text-sections"><a href="">Voir l'ensemble des formations à Trixell</a></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="">Training Day </a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/FICHEINTERLOCUTEUR.pdf">Note d'Orientation </a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf"> Principales Evolutions possibles ou attendus des Metiers ou Compétences</a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf"> Catalogue des Formations internes </a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf">Fiche tendance Industrie</a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf">Fiche tendance service client</a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf">Fiche tendance R&D</a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf"> Fiche tendance Qualite et Satisfaction Slient </a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf"> Fiche tendance Management et Offre Projet </a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf"> Fiche tendance Stratégie Marketing, Vente </a>
-                                    <br />
-                                    <br />
-                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                    <a href="http://trixnet.ted.thales/trixnet/2_2rh/docs/Documents/GIC/LesservicesduGic2016pourlessalaries.pdf"> Guide EDP </a>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
+                        @{
+                            ViewBag.Title = "Formations";
+                            await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirFormation);
+                        }
                     </div>
                     <!--Ici c'est l'affichage simple de la page HTML-->
                     <div class="showcase-text" style="padding: 0">
@@ -363,17 +328,18 @@
                                     </div>
                                     <div class="modal-body">
                                         <span>
+                                            <!--Automatisation ? easy-->
                                             <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
                                             <a href="">Accord Groupe en faveur des personnes en situation de handicap 2015</a>
                                         </span>
                                         <br />
                                         <br />
-                                        <span>
-                                            <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                            <a href="">Fonctionnement de la commission handicap </a>
-                                        </span>
-                                        <br />
-                                        <br />
+                                        @*<span>
+                                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                                <a href="">Fonctionnement de la commission handicap</a>
+                                            </span>
+                                            <br />
+                                            <br />*@
                                         <span>
                                             <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
                                             <a href="">Comptes rendus Réunions BEHRA</a>
@@ -386,22 +352,22 @@
                                         </span>
                                         <br />
                                         <br />
-                                        <span>
-                                            <i class="fas fa-plus trix-blue" style="margin-right:10px"></i>
-                                            <a class="popAnchor" href="#" data-placement="right" data-content='<a href="index.cshtml">Lien1111111111111111112222222222222222222211111111111</a> <br /> <a href="index.cshtml">Lien2222522222222222222222222222222222222222222222222222</a> <br /> <a href="index.cshtml">Lien33333222222222222222222222222222222222233333333</a> <br />'>Sensibilisation Emploi Handicap Moirans</a>
-                                        </span>
-                                        <br />
-                                        <br />
-                                        <span>
-                                            <i class="fas fa-plus trix-blue" style="margin-right:10px"></i>
-                                            <a class="popAnchor" href="#" data-placement="right" data-content='<a href="index.cshtml">Lien11111111111111111111111111111</a> <br /> <a href="index.cshtml">Lien2222222222222222</a> <br /> <a href="index.cshtml">Lien3333333333333</a> <br />'>Articles de presse</a>
-                                        </span>
-                                        <br />
-                                        <br />
-                                        <span>
-                                            <i class="fas fa-plus trix-blue" style="margin-right:10px"></i>
-                                            <a class="popAnchor" href="#" data-placement="right" data-content='<a href="index.cshtml">Lien1</a> <br /> <a href="index.cshtml">Lien2</a> <br /> <a href="index.cshtml">Lien3</a> <br />'>Sensibillisation par la vidéo</a>
-                                        </span>
+                                        @* <span>
+                                                <i class="fas fa-plus trix-blue" style="margin-right:10px"></i>
+                                                <a class="popAnchor" href="#" data-placement="right" data-content='<a href="index.cshtml">Lien1111111111111111112222222222222222222211111111111</a> <br /> <a href="index.cshtml">Lien2222522222222222222222222222222222222222222222222222</a> <br /> <a href="index.cshtml">Lien33333222222222222222222222222222222222233333333</a> <br />'>Sensibilisation Emploi Handicap Moirans</a>
+                                            </span>
+                                            <br />
+                                            <br />
+                                            <span>
+                                                <i class="fas fa-plus trix-blue" style="margin-right:10px"></i>
+                                                <a class="popAnchor" href="#" data-placement="right" data-content='<a href="index.cshtml">Lien11111111111111111111111111111</a> <br /> <a href="index.cshtml">Lien2222222222222222</a> <br /> <a href="index.cshtml">Lien3333333333333</a> <br />'>Articles de presse</a>
+                                            </span>
+                                            <br />
+                                            <br />
+                                            <span>
+                                                <i class="fas fa-plus trix-blue" style="margin-right:10px"></i>
+                                                <a class="popAnchor" href="#" data-placement="right" data-content='<a href="index.cshtml">Lien1</a> <br /> <a href="index.cshtml">Lien2</a> <br /> <a href="index.cshtml">Lien3</a> <br />'>Sensibillisation par la vidéo</a>
+                                            </span>*@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -424,26 +390,94 @@
 
             <div class="col-lg-7">
                 <!-- Accords Applicables -->
+                <div class="modal fade" id="accordsApplicables" tabindex="-1" role="dialog" aria-labelledby="accordsApplicablesModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="accordsApplicablesModal">Ressources Humaines - Les Accords</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="content">
+                                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                    <a href="https://intranet.peopleonline.corp.thales/sites/international/europe/france/nos-services/hr-france/accords-france" target="_blank">Consulter les accords Groupe</a>
+                                </div>
+                                <br />
+                                @{
+                                    ViewBag.Title = "Les Accords Trixell";
+                                    await Html.RenderPartialAsync("../Shared/_ListDocsMenu", pathDirAccords);
+                                }
+                                <br />
+                                @{
+                                    ViewBag.Title = "Les Convention Trixell";
+                                    await Html.RenderPartialAsync("../Shared/_ListDocsMenu", pathDirConvention);
+                                }
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12">
                     <div class="showcase-text" style="padding: 0">
                         <div class="SectionHB SectionGD PageSection">
                             <div class="titreSection">
                                 <h2 class="jaapooki text-sections"> Accords applicables </h2>
                             </div>
-                            <a href="index.html" class="row" style="padding: 10px;">
+                            <a href="#accordsApplicables" data-toggle="modal" data-target="#accordsApplicables" class="row" style="padding: 10px;">
                                 <img class="col-lg-10" src="~/img/RH/mini_accord.gif" height="395">
                             </a>
                         </div>
                     </div>
                 </div>
                 <!-- Guides/Formulaires RH -->
+                <div class="modal fade" id="guides_Formulaires" tabindex="-1" role="dialog" aria-labelledby="guides_FormulairesModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content modal-lg">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="guides_FormulairesModal">Guides et Formulaires</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <span style="color:forestgreen; text-align : center">
+                                    <strong>Si vous ne trouvez pas le document souhaité, faites une recherche dans le 
+                                    <a href="#">référenciel RH ISO </a></strong>
+                                </span>
+                                <br />
+                                <br />
+                                @{
+                                    ViewBag.Title = "Les Fiches Pratiques";
+                                    await Html.RenderPartialAsync("../Shared/_ListDocsMenu", pathDirFichesPratiques);
+                                }
+                                <br />
+                                @{
+                                    ViewBag.Title = "Les Guides Pratiques";
+                                    await Html.RenderPartialAsync("../Shared/_ListDocsMenu", pathDirGuidesPrat);
+                                }
+                                <br />
+                                @{
+                                    ViewBag.Title = "Les Formulaires RH";
+                                    await Html.RenderPartialAsync("../Shared/_ListDocsMenu", pathDirFormulaire);
+                                }
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12">
                     <div class="showcase-text" style="padding: 0">
                         <div class="SectionHB SectionGD PageSection">
                             <div class="titreSection">
                                 <h2 class="jaapooki text-sections"> Guides et formulaires RH </h2>
                             </div>
-                            <a href="index.html" class="row" style="padding: 10px;">
+                            <a href="#guides_Formulaires" data-toggle="modal" data-target="#guides_Formulaires" class="row" style="padding: 10px;">
                                 <img class="col-lg-10" src="~/img/RH/formulaire-removebg-preview.gif" height="300">
                             </a>
                         </div>
@@ -452,28 +486,73 @@
             </div>
         </div>
         <div class="row no-gutters">
+
+            <!-- QVT -->
             <div class="col-lg-6">
-                <!-- QVT -->
+                <div class="modal fade" id="QVT" tabindex="-1" role="dialog" aria-labelledby="QVTModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="QVTModal">Qualité de Vie au Travail</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                <a href="~/img/RH/CEVRES_ExercicesTMS_compressed.pdf" target="_blank">Cevres Santé - Exercices de prévention des TMS</a>
+                                <br />
+                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                <a href="~/img/RH/Bonnes_pratiques_utilisation_du mail_compressed.pptx">Bonnes pratiques de l'utilisation du mail (lien faux) </a>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12">
                     <div class="showcase-text" style="padding: 0">
                         <div class="SectionHB SectionGD PageSection">
                             <div class="titreSection">
                                 <h2 class="jaapooki text-sections"> QVT </h2>
                             </div>
-                            <a href="index.html" class="row" style="padding: 10px;">
+                            <a href="#QVT" data-toggle="modal" data-target="#QVT" class="row" style="padding: 10px;">
                                 <img class="col-lg-10 imgSectionRH" src="~/img/RH/QVT-removebg-preview.gif">
                             </a>
                         </div>
                     </div>
                 </div>
                 <!-- Teletravail -->
+                <div class="modal fade" id="teletravail" tabindex="-1" role="dialog" aria-labelledby="teletravailModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="teletravailModal">Télétravail</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                <a href="~/img/RH/Teletravail/Accord Télétravail Trixell_compressed.pdf" target="_blank">Accord Télétravail</a>
+                                <br />
+                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                <a href="~/img/RH/Teletravail/L'ESSENTIEL DU TELETRAVAIL TRIXELL_compressed.pdf" target="_blank">Essentiel du télétravail</a>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-12">
                     <div class="showcase-text" style="padding: 0; margin-top:20px">
                         <div class="SectionHB SectionGD PageSection">
                             <div class="titreSection">
-                                <h2 class="jaapooki text-sections"> Teletravail </h2>
+                                <h2 class="jaapooki text-sections"> Télétravail </h2>
                             </div>
-                            <a href="index.html" class="row" style="padding: 10px;">
+                            <a href="#teletravail" data-toggle="modal" data-target="#teletravail" class="row" style="padding: 10px;">
                                 <img class="col-lg-10 imgSectionRH" src="~/img/RH/teletravail.jpeg">
                             </a>
                         </div>

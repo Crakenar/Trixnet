@@ -747,7 +747,6 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.PowerPoint.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.Views.pdb
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\ConvertApi.dll
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csprojAssemblyReference.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Magick.NET-Q8-AnyCPU.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Magick.NET.Core.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\Magick.Native-Q8-x64.dll.so
@@ -757,3 +756,6 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csproj.CoreCompileInputs.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ListDocsMenu.cshtml.g.cs
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ListDocsModal.cshtml.g.cs
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csprojAssemblyReference.cache

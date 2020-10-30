@@ -1,0 +1,29 @@
+@model string
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string[] files = System.IO.Directory.GetFiles(Model);
+}
+<div class="content">
+    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+    <a class="dropdown" data-toggle="dropdown">@ViewBag.Title</a>
+    <ul class="dropdown-menu" style="width : 1000px" aria-labelledby="dropdownMenuInfos">
+        @if (files.Length > 0)
+        {
+            <li><h4 style="text-align : center;">Les Accords Trixell</h4></li>
+            <br />
+            foreach (var file in files)
+            {
+                string fileSubbed = file.Substring(Model.Length, file.Length - Model.Length);
+                string link = Model + fileSubbed;
+                //jsp pk, on enleve le wwwroot/
+                link = link.Substring(8, link.Length-8);
+                <li style="margin-bottom : 15px; margin-left : 25px;">
+                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                    <a href="~/@link" target="_blank">@fileSubbed</a>
+                </li>
+            }
+        }
+    </ul>
+</div>
