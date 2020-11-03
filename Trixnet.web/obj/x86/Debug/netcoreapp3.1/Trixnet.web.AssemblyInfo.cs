@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly : AssemblyVersion(2.0.0)]
 [assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("OrchardCore.Users")]
 [assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("OrchardCore.Menu")]
 [assembly: OrchardCore.Modules.Manifest.ModuleNameAttribute("TheTheme")]

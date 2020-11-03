@@ -11,17 +11,14 @@
     /// }
     ///
     /////
-    string[] getFilesFromDirectory_Click(object sender, EventArgs e, string path)
-    {
-        return System.IO.Directory.GetFiles(path);
-    }
+
 
 
     string path = "wwwroot/img/RH/";
     //récuperer l'ensemble des accords Trixell
-    string pathDirAccords = path + "Accords_Applicables/Accords_Trixell_compressed/";
+    string pathDirAccords = path + "Accords_Trixell/";
     //Récupérer l'ensemble des conventions
-    string pathDirConvention = path + "Accords_Applicables/Convention_compressed/";
+    string pathDirConvention = path + "Convention_Trixell/";
 
     string pathDirFormation = path + "Formations/";
 
@@ -33,7 +30,9 @@
 
     string pathDirTeletravail = path + "Teletravail/";
     string pathDirQVT = path + "QVT/";
+    string pathDirHumanis = path + "Humanis/";
 }
+
 <link rel="stylesheet" href="~/css/RH.css">
 <!-- Image Showcases -->
 <section class="showcase">
@@ -148,24 +147,13 @@
             <div class="col-lg-5">
                 <!-- Formation -->
                 <div class="col-lg-12">
-                    <!-- pour chaque article on lui créer un modal(pop-up bootstrap) avec son titre sa description etc-->
-                    <div class="modal fade" id="espaceFormation" tabindex="-1" role="dialog" aria-labelledby="formationModal" aria-hidden="true">
-                        @{
-                            ViewBag.Title = "Formations";
-                            await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirFormation);
-                        }
-                    </div>
-                    <!--Ici c'est l'affichage simple de la page HTML-->
-                    <div class="showcase-text" style="padding: 0">
-                        <div class="SectionHB SectionGD PageSection">
-                            <div class="titreSection">
-                                <h2 class="jaapooki text-sections"> Espace formation </h2>
-                            </div>
-                            <a class="row link-news" data-toggle="modal" href="#espaceFormation" data-target="#espaceFormation" style="padding: 10px;">
-                                <img class="col-lg-10 imgSectionRH" src="~/img/RH/formation-removebg-preview.gif">
-                            </a>
-                        </div>
-                    </div>
+                    @{
+                        ViewBag.Title = "Formation";
+                        ViewBag.Image = "/img/RH/formation-removebg-preview.gif";
+                        ViewBag.ID = "formation";
+                        ViewBag.Taille = "12";
+                        await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirFormation);
+                    }
                 </div>
                 <div class="row">
                     <!-- PPTA -->
@@ -395,7 +383,7 @@
 
             <div class="col-lg-7">
                 <!-- Accords Applicables -->
-                <div class="modal fade" id="accordsApplicables" tabindex="-1" role="dialog" aria-labelledby="accordsApplicablesModal" aria-hidden="true">
+               @**@ <div class="modal fade" id="accordsApplicables" tabindex="-1" role="dialog" aria-labelledby="accordsApplicablesModal" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -450,8 +438,10 @@
                             </div>
                             <div class="modal-body">
                                 <span style="color:forestgreen; text-align : center">
-                                    <strong>Si vous ne trouvez pas le document souhaité, faites une recherche dans le 
-                                    <a href="#">référenciel RH ISO </a></strong>
+                                    <strong>
+                                        Si vous ne trouvez pas le document souhaité, faites une recherche dans le
+                                        <a href="#">référenciel RH ISO </a>
+                                    </strong>
                                 </span>
                                 <br />
                                 <br />
@@ -494,148 +484,72 @@
 
             <!-- QVT -->
             <div class="col-lg-6">
-                <div class="modal fade" id="QVT" tabindex="-1" role="dialog" aria-labelledby="QVTModal" aria-hidden="true">
-                   @{ 
-                       ViewBag.Title = "Qualité de Vie au Travail";
-                       await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirQVT);
-                   }
-                </div>
-                <div class="col-lg-12">
-                    <div class="showcase-text" style="padding: 0">
-                        <div class="SectionHB SectionGD PageSection">
-                            <div class="titreSection">
-                                <h2 class="jaapooki text-sections"> QVT </h2>
-                            </div>
-                            <a href="#QVT" data-toggle="modal" data-target="#QVT" class="row" style="padding: 10px;">
-                                <img class="col-lg-10 imgSectionRH" src="~/img/RH/QVT-removebg-preview.gif">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @{
+                    ViewBag.Title = "Qualité de Vie au Travail";
+                    ViewBag.Image = "/img/RH/QVT-removebg-preview.gif";
+                    ViewBag.ID = "QVT";
+                    ViewBag.Taille = "12";
+                    await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirQVT);
+                }
                 <!-- Teletravail -->
-                <div class="modal fade" id="teletravail" tabindex="-1" role="dialog" aria-labelledby="teletravailModal" aria-hidden="true">
-                   @{
-                       ViewBag.Title = "Télétravail";
-                       await Html.RenderPartialAsync("../Shared/_ListDocsModal",pathDirTeletravail);
-                   }
-                </div>
-                <div class="col-lg-12">
-                    <div class="showcase-text" style="padding: 0; margin-top:20px">
-                        <div class="SectionHB SectionGD PageSection">
-                            <div class="titreSection">
-                                <h2 class="jaapooki text-sections"> Télétravail </h2>
-                            </div>
-                            <a href="#teletravail" data-toggle="modal" data-target="#teletravail" class="row" style="padding: 10px;">
-                                <img class="col-lg-10 imgSectionRH" src="~/img/RH/teletravail.jpeg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @{
+                    ViewBag.Title = "Télétravail";
+                    ViewBag.Image = "/img/RH/teletravail.jpeg";
+                    ViewBag.ID = "teletravail";
+                    ViewBag.Taille = "12";
+                    await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirTeletravail);
+                }
             </div>
             <div class="col-lg-6">
                 <div class="row no-gutters">
                     <!-- Crèche -->
-                    <div class="col-lg-12">
-                        <div class="showcase-text" style="padding: 0">
-                            <div class="SectionHB SectionGD PageSection">
-                                <div class="titreSection">
-                                    <h2 class="jaapooki text-sections"> Crèche </h2>
-                                </div>
-                                <a href="index.html" class="row" style="padding: 10px;">
-                                    <img class="col-lg-10 imgSectionRH" src="~/img/RH/creche-entreprise.jpg">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @{
+                        ViewBag.Title = "Crèche";
+                        ViewBag.Image = "/img/RH/creche-entreprise.jpg";
+                        ViewBag.ID = "creche";
+                        ViewBag.Taille = "12";
+                        await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirQVT);
+                    }
                     <!-- Nouveaux Arrivants -->
-                    <div class="col-lg-6">
-                        <div class="showcase-text" style="padding: 0">
-                            <div class="SectionHB SectionGD PageSection">
-                                <div class="titreSection">
-                                    <h2 class="jaapooki text-sections"> Nouveaux arrivants </h2>
-                                </div>
-                                <a href="index.html" class="row" style="padding: 10px;">
-                                    <img class="col-lg-10 imgSectionRH" src="~/img/RH/action_logement-removebg-preview.gif">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @{
+                        ViewBag.Title = "Nouveaux arrivants";
+                        ViewBag.Image = "/img/RH/creche-entreprise.jpg";
+                        ViewBag.ID = "nouveauxArrivants";
+                        ViewBag.Taille = "6";
+                        await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirQVT);
+                    }
+
                     <!-- Action Logement -->
-                    <div class="col-lg-6">
-                        <!-- pour chaque article on lui créer un modal(pop-up bootstrap) avec son titre sa description etc-->
-                        <div class="modal fade" id="actionLogement" tabindex="-1" role="dialog" aria-labelledby="articleModal" aria-hidden="true">
-                            @{ 
-                                ViewBag.Title = "Action Logement";
-                                await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirActionLogement);
-                            }
-                        </div>
-                        <!--Ici c'est l'affichage simple de la page HTML-->
-                        <div class="showcase-text" style="padding: 0">
-                            <div class="SectionHB SectionGD PageSection">
-                                <div class="titreSection">
-                                    <h2 class="jaapooki text-sections"> Action logement </h2>
-                                </div>
-                                <a class="row link-news" data-toggle="modal" href="#actionLogement" data-target="#actionLogement" style="padding: 10px;">
-                                    <img class="col-lg-10 imgSectionRH" src="~/img/RH/action_logement-removebg-preview.gif" height="100" loading="lazy">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @{
+                        ViewBag.Title = "Action Logement";
+                        ViewBag.Image = "/img/RH/action_logement-removebg-preview.gif";
+                        ViewBag.ID = "actionLogement";
+                        ViewBag.Taille = "6";
+                        await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirActionLogement);
+                    }
                 </div>
             </div>
         </div>
         <div class="row no-gutters">
-          
-            <div class="modal fade" id="IRP" tabindex="-1" role="dialog" aria-labelledby="IRPModal" aria-hidden="true">
-                @{
-                    ViewBag.Title = "Instance Représentation du Personnel (IRP)";
-                    await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirIRP);
-                }
-            </div>
-            <!-- IRP -->
-            <div class="col-lg-6">
-                <div class="showcase-text" style="padding: 0">
-                    <div class="SectionHB SectionGD PageSection">
-                        <div class="titreSection">
-                            <h2 class="jaapooki text-sections"> IRP </h2>
-                        </div>
-                        <a href="#IRP" data-toggle="modal" data-target="#IRP" class="row" style="padding: 10px;">
-                            <img class="col-lg-10" src="~/img/RH/irp.gif" height="300" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @{
+                ViewBag.Image = "/img/RH/irp.gif";
+                ViewBag.ID = "IRP";
+                ViewBag.HeightImage = 300;
+                ViewBag.Taille = "6";
+                ViewBag.Title = "Instance Représentation du Personnel (IRP)";
+                await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirIRP);
+            }
             <!-- Mutuelles Humanis -->
             <div class="col-lg-6">
-                <!-- pour chaque article on lui créer un modal(pop-up bootstrap) avec son titre sa description etc-->
-                <div class="modal fade" id="humanis" tabindex="-1" role="dialog" aria-labelledby="humanisModal" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="humanisModal">Mutuelle Humanis</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                                <a href="">Mutuelle Humanis</a>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Ici c'est l'affichage simple de la page HTML-->
-                <div class="SectionHB SectionGD PageSection">
-                    <div class="titreSection">
-                        <h2 class="jaapooki text-sections"> Mutuelle </h2>
-                    </div>
-                    <a class="row link-news" data-toggle="modal" href="#humanis" data-target="#humanis" style="padding: 10px;">
-                        <img class="col-lg-10" src="~/img/RH/humanis.gif" height="300" loading="lazy">
-                    </a>
-                </div>
+                @{
+                    ViewBag.Image = "/img/RH/humanis.gif";
+                    ViewBag.ID = "mutuelle";
+                    ViewBag.HeightImage = 300;
+                    ViewBag.Taille = "12";
+                    ViewBag.Title = "Mutuelle Humanis";
+                    ViewBag.SpecialHTML = "<a href='#'> Mutuelle Humanis </a>";
+                    await Html.RenderPartialAsync("../Shared/_ListDocsModal", pathDirHumanis);
+                }
             </div>
         </div>
     </div>

@@ -4,32 +4,88 @@
 *@
 @{
     string[] files = System.IO.Directory.GetFiles(Model);
+
+    string linkModal = "#" + ViewBag.ID;
+    int height = 0;
+    if (ViewBag.HeightImage != null)
+    {
+        height = ViewBag.HeightImage;
+    }
+    else
+    {
+        height = 200;
+    }
+
 }
-<div class="modal-dialog modal-lg">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">@ViewBag.Title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            @if (files.Length > 0)
-            {
-                foreach (var file in files)
+<div class="modal fade" id="@ViewBag.ID" tabindex="-1" role="dialog" aria-labelledby="@ViewBag.Title+Modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@ViewBag.Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @if (files.Length > 0)
                 {
-                    <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
-                    string fileSubbed = file.Substring(Model.Length, file.Length - Model.Length);
-                    string link = Model + fileSubbed;
-                    link = link.Substring(8, link.Length - 8);
-                    <a href="~/@link" target="_blank">@fileSubbed</a>
-                    <br />
-                    <br />
+                    foreach (var file in files)
+                    {
+                        @*string[] docsFiles = System.IO.Directory.GetFiles(Model);
+                        if (docsFiles.Length > 0)
+                        {
+                            <div class="content">
+                                <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                <a class="dropdown" data-toggle="dropdown">@ViewBag.Title</a>
+                                <ul class="dropdown-menu" style="width : 1000px" aria-labelledby="dropdownMenuInfos">
+                                    <li><h4 style="text-align : center;">@ViewBag.Title</h4></li>
+                                    <br />
+                                    @foreach (var docs in docsFiles)
+                                    {
+                                        string docsSubbed = docs.Substring(Model.Length, docs.Length - Model.Length);
+                                        string linkDocs = Model + docsSubbed;
+                                        //jsp pk, on enleve le wwwroot/
+                                        linkDocs = linkDocs.Substring(8, linkDocs.Length - 8);
+                                        <li style="margin-bottom : 15px; margin-left : 25px;">
+                                            <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                                            <a href="~/@linkDocs" target="_blank">@docsSubbed</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+                        else
+                        {*@
+                            <i class="fas fa-angle-right trix-blue" style="margin-right:10px"></i>
+                            string fileSubbed = file.Substring(Model.Length, file.Length - Model.Length);
+                            string link = Model + fileSubbed;
+                            link = link.Substring(8, link.Length - 8);
+                            <a href="~/@link" target="_blank">@fileSubbed</a>
+                            <br />
+                            <br />
+                       // }
+                    }
                 }
-            } 
+                else
+                {
+                    @Html.Raw(ViewBag.SpecialHTML);
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+</div>
+<div class="col-lg-@ViewBag.Taille">
+    <div class="showcase-text" style="padding: 0">
+        <div class="SectionHB SectionGD PageSection">
+            <div class="titreSection">
+                <h2 class="jaapooki text-sections"> @ViewBag.Title </h2>
+            </div>
+            <a href="@linkModal" data-toggle="modal" data-target="@linkModal" class="row" style="padding: 10px;">
+                <img class="col-lg-10" height="@height" src="@ViewBag.Image" loading="lazy">
+            </a>
         </div>
     </div>
 </div>

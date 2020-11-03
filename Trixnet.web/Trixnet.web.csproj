@@ -38,6 +38,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\img\Profiles\" />
+    <Folder Include="wwwroot\img\RH\Humanis\" />
   </ItemGroup>
 
   <ItemGroup>

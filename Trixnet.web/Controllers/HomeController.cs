@@ -29,9 +29,9 @@ namespace Trixnet.web.Controllers
              Combien de powerpoint doit-on afficher ? Si c'est 1 seul créer par l'admin ou il met plusieurs ppt et je dois effectuer l'opération ?             
              */
             string typeSortie = "gif";
-            string pathDir = "wwwroot/img/Profiles/";
+            //string pathDir = "wwwroot/img/Profiles/";
             string path = "C:\\Users\\BURINDUS44\\Documents\\Webmaster\\Trixnet - Copie\\Trixnet.web\\Trixnet.web\\wwwroot\\img\\Profiles\\";
-            string ppt = "C:/Users/BURINDUS44/Documents/Webmaster/Trixnet - Copie/Trixnet.web/Trixnet.web/wwwroot/img/RH/LiensPratiques/Bonnes_pratiques_utilisation_du mail(1).pptx";
+            //string ppt = "C:/Users/BURINDUS44/Documents/Webmaster/Trixnet - Copie/Trixnet.web/Trixnet.web/wwwroot/img/RH/LiensPratiques/Bonnes_pratiques_utilisation_du mail(1).pptx";
             string ppt2 = "C:\\Users\\BURINDUS44\\Documents\\Webmaster\\Trixnet - Copie\\Trixnet.web\\Trixnet.web\\wwwroot\\img\\RH\\LiensPratiques\\HVI-2013312_V2(1).ppt";
             Services.ConvertFilesClass utils = new Services.ConvertFilesClass();
             utils.ConvertFiles(ppt2, path, typeSortie);
@@ -118,6 +118,15 @@ namespace Trixnet.web.Controllers
         {
             return View("Views/Formulaires/Formulaire.cshtml");
         }
+
+
+
+        [Route("/Products/Products.cshtml")]
+        public IActionResult Products()
+        {
+            return View("Views/Products/Products.cshtml");
+        }
+
 
         //Fonction annuaire Teo berguerre 12/10/2020
         public IActionResult Annuaire(string search, string optionAnnuaire)

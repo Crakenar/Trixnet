@@ -1,11 +1,1 @@
-﻿body {
-   
-}
-
-.popover{
-    z-index : 9999;
-}
-
-.link{
-    font-size: 17px!important;
-}
+.popover{z-index:9999}.link{font-size:17px !important}.height-800{height:800px !important}
