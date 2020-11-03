@@ -33,8 +33,12 @@ namespace Trixnet.web.Controllers
             string path = "C:\\Users\\BURINDUS44\\Documents\\Webmaster\\Trixnet - Copie\\Trixnet.web\\Trixnet.web\\wwwroot\\img\\Profiles\\";
             //string ppt = "C:/Users/BURINDUS44/Documents/Webmaster/Trixnet - Copie/Trixnet.web/Trixnet.web/wwwroot/img/RH/LiensPratiques/Bonnes_pratiques_utilisation_du mail(1).pptx";
             string ppt2 = "C:\\Users\\BURINDUS44\\Documents\\Webmaster\\Trixnet - Copie\\Trixnet.web\\Trixnet.web\\wwwroot\\img\\RH\\LiensPratiques\\HVI-2013312_V2(1).ppt";
-            Services.ConvertFilesClass utils = new Services.ConvertFilesClass();
-            utils.ConvertFiles(ppt2, path, typeSortie);
+            if(System.IO.Directory.GetFiles(path).Length == 0)
+            {
+                Services.ConvertFilesClass utils = new Services.ConvertFilesClass();
+                utils.ConvertFiles(ppt2, path, typeSortie);
+            }
+           
         }
 
         [Route("/")]

@@ -8,12 +8,10 @@
 <section>
     <h2 style="color : white; text-align : center;">Nos Produits</h2>
     <div class="timelineSection">
-        <!--peut mieux faire avec nth-child(odd/even) en css ?-->
+        <!--peut mieux faire avec nth-child(odd/even)-->
         @for (int i = 0; i < 6; i++)
         {
-            if (i % 2 == 0)
-            {
-                <div class="containerSection left">
+                <div class="containerSection @(i%2 == 0 ? "left" : "right")">
                     <div class="contentSection">
                         <h2>Titre 1</h2>
                         <hr />
@@ -26,22 +24,6 @@
                         <hr />
                         <img src="~/img/InProgress.jpg" loading="lazy" />
 
-                    </div>
-                </div>
-            }
-            else
-            {
-                <div class="containerSection right">
-                    <div class="contentSection">
-                        <h2>Titre 222</h2>
-                        <hr />
-                        <p>
-                            Lorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un description
-                            Lorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un description
-                            Lorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un descriptionLorem ipsum je suis un description
-                        </p>
-                        <hr />
-                        <img src="~/img/InProgress.jpg" loading="lazy" />
                     </div>
                 </div>
             }

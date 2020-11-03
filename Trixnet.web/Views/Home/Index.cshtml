@@ -11,13 +11,14 @@
 
 @inject OrchardCore.IOrchardHelper Orchard
 @{
+    var tab_meteoSI = await Orchard.GetRecentContentItemsByContentTypeAsync("MeteoSI", 1);
+    string pathCMS = "../../../../Media/";
+    string imgPath = @pathCMS + @tab_meteoSI.First().Content.MeteoSI.MediaMeteoSI.Paths[0];
 
     var heure = DateTime.Now.ToString();
     //ViewData["Title"] = "Home Page";
     var imagesCaroussel = ViewBag.ImageCaroussel;
-
 }
-
 <!-- Body -->
 <section class="showcase">
     <div class="container-fluid p-0">
@@ -28,46 +29,37 @@
                     <!-- Tableau de bord -->
                     <div class="SectionHB SectionGD AppSection">
                         <div class="titreSection">
-                            <h2 class="jaapooki" style="font-size: 1.5rem; color: rgb(19, 133,203);"><i class="fas fa-cloud-sun"></i>  Tableau de bord</h2>
+                            <h2 class="jaapooki" style="font-size: 1.5rem; color: rgb(19, 133,203);"><i class="fas fa-cloud-sun"></i> Météo SI</h2>
                         </div>
-
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="bg-blue active" style="background-color: rgb(19, 133,203)"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-blue" style="background-color: rgb(19, 133,203)"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item tableauDeBordItem active">
-                                    <h2>Moirans</h2>
-                                    <p id="datetime">@heure</p>
-                                    <p>Ensoleillé</p>
-                                    <div class="meteoContainer">
-                                        <i class="fas fa-sun meteoPicto"></i>
-                                        <h2 class="temperature">20°</h2>
+                        <div>
+                            <div class="modal fade" id="meteoSI" tabindex="-1" role="dialog" aria-labelledby="meteoSIModal" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="meteoSIModal"> Météo Systeme d'Information</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>@tab_meteoSI.First()</h3>
+                                            <br />
+                                            <p><strong>Description</strong></p>
+                                            <p>@tab_meteoSI.First().Content.MarkdownBodyPart.Markdown</p>
+                                        </div>
+                                        <div class="modal-footer" style="background-image:url(@imgPath);">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
-                                    <!--<img class="d-block w-100" src="img/météo.PNG" alt="First slide">-->
-                                </div>
-                                <div class="carousel-item tableauDeBordItem">
-                                    <h2>Météo SI</h2>
-                                    <div class="cadreEtat">
-                                        <p class="TexteEtat">Aucun incident à déclarer actuellement.</p>
-                                    </div>
-                                    <!--<img class="d-block w-100" src="img/météoSI.png" alt="Second slide">-->
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span aria-hidden="true"><i class="fas fa-angle-left" style="color: rgb(19, 133,203); font-size: 25px;"></i></span>
-                                <span class="sr-only">Previous</span>
+                            <h2>@tab_meteoSI.First()</h2>
+                            <a href="#meteoSI" data-toggle="modal" data-target="#meteoSI">
+                                <img class="w-100" src="@imgPath"  height="100" />
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span aria-hidden="true">
-                                    <i class="fas fa-angle-right" style="color : rgb(19, 133,203); font-size: 25px;"></i>
-                                </span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                            <!--<img class="d-block w-100" src="img/météoSI.png" alt="Second slide">-->
                         </div>
                     </div>
-
                     <!-- Applications -->
                     <div class="SectionHB SectionGD AppSection">
                         <div class="titreSection">

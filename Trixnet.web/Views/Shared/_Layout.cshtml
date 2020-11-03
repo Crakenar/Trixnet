@@ -20,21 +20,21 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-light static-top" style="background-color:rgba(0,51,160,0.7)">
-            <div class="container" style="margin-left:-150px">
-                <div class="enteteTrixnet col-lg-2" style="margin-right : -2000px!important">
-                    <a href="/" style="margin-left : 200px!important">
+        <nav class="navbar navbar-expand-sm static-top" style="background-color:rgba(0,51,160,0.7)">
+            <div class="container">
+                <div class="enteteTrixnet col-sm-5 col-lg-2" style="margin-right : -2000px!important">
+                    <a href="/">
                         <img class="navbar-brand img-navbar" src="~/img/trixell_White.png">
                         <img src="~/img/TrixellSousTitre.png" style="width:12rem">
                     </a>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-sm-5 col-lg-8">
                     <form class="row" asp-controller="Home" asp-action="Annuaire" method="post" target="_blank">
-                        <select class="col-lg-1" name="optionAnnuaire" id="optionAnnuaire">
+                        <select class="col-lg-2" name="optionAnnuaire" id="optionAnnuaire">
                             <option value="Trixell">Trixell</option>
                             <option value="eDir">eDir</option>
                         </select>
-                        <input class="form-control searchbar-style col-lg-11" id="" type="text" name="search" placeholder="Recherche dans l'annuaire" />
+                        <input class="form-control searchbar-style col-lg-10" id="" type="text" name="search" placeholder="Recherche dans l'annuaire" />
                     </form>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 </a>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,51,160,0.7); padding: 0;">
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: rgba(0,51,160,0.7); padding: 0;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
