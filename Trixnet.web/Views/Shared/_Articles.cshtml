@@ -44,17 +44,20 @@
                                 </button>
                             </div>
                             <div class="modal-body">@articleText</div>
-                            <hr />
-                            <div class="row">
-                                <!--Affichage de l'ensemble des documents liés à l'article-->
-                                @for (int p = 0; p < documents.Count; p++)
-                                {
-                                    <span class="col-lg-4">
-                                        <img src="@documents[p].GetType().GetProperty("imageShow").GetValue(@documents[p],null)" width="40" height="30" />
-                                        <a href="@documents[p].GetType().GetProperty("downloadLink").GetValue(@documents[p],null)" target="_blank">@documents[p].GetType().GetProperty("nameDoc").GetValue(@documents[p], null)</a>
-                                    </span>
-                                }
-                            </div>
+                            @if (documents.Count > 0)
+                            {
+                                <hr />
+                                <div class="row">
+                                    <!--Affichage de l'ensemble des documents liés à l'article-->
+                                    @for (int p = 0; p < documents.Count; p++)
+                                    {
+                                        <span class="col-lg-4">
+                                            <img src="@documents[p].GetType().GetProperty("imageShow").GetValue(@documents[p],null)" width="40" height="30" />
+                                            <a href="@documents[p].GetType().GetProperty("downloadLink").GetValue(@documents[p],null)" target="_blank">@documents[p].GetType().GetProperty("nameDoc").GetValue(@documents[p], null)</a>
+                                        </span>
+                                    }
+                                </div>
+                            }
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
@@ -70,17 +73,20 @@
                             <p class="lead mb-0" style="text-justify: distribute;">@(articleText.Length > maxCharacterDescription ?  articleText.Substring(0, maxCharacterDescription) :  articleText)<p>
                         </div>
                     </a>
-                    <div class="row">
-                        <!--Affichage de l'ensemble des documents liés à l'article-->
-                        @for (int p = 0; p < documents.Count; p++)
-                        {
-                            <!--<span>-->
-                            <div class="col-lg-4">
-                                <img src="@documents[p].GetType().GetProperty("imageShow").GetValue(@documents[p],null)" width="40" height="30" loading="lazy" />
-                                <a href="@documents[p].GetType().GetProperty("downloadLink").GetValue(@documents[p],null)" target="_blank">@documents[p].GetType().GetProperty("nameDoc").GetValue(@documents[p], null)</a>
-                            </div>
-                        }
-                    </div>
+                    @if (documents.Count > 0)
+                    {
+                        <div class="row">
+                            <!--Affichage de l'ensemble des documents liés à l'article-->
+                            @for (int p = 0; p < documents.Count; p++)
+                            {
+                                <!--<span>-->
+                                <div class="col-lg-4">
+                                    <img src="@documents[p].GetType().GetProperty("imageShow").GetValue(@documents[p],null)" width="40" height="30" loading="lazy" />
+                                    <a href="@documents[p].GetType().GetProperty("downloadLink").GetValue(@documents[p],null)" target="_blank">@documents[p].GetType().GetProperty("nameDoc").GetValue(@documents[p], null)</a>
+                                </div>
+                            }
+                        </div>
+                    }
                 </div>
             }
         }

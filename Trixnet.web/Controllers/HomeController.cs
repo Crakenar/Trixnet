@@ -62,61 +62,6 @@ namespace Trixnet.web.Controllers
         }
 
 
-        //Direction Generale
-        [Route("/DirectionGenerale/IndexDirectionGenerale.cshtml")]
-        public IActionResult Secretariat()
-        {
-            return View("Views/DirectionGenerale/IndexDirectionGenerale.cshtml");
-        }
-
-        //Direction Financiere donc les 'finances' et le departement SI
-        [Route("/DirectionFinanciere/Index.cshtml")]
-        public IActionResult IndexDirectionFinanciere()
-        {
-            return View("Views/DirectionFinanciere/Index.cshtml");
-        }
-
-        [Route("/DirectionFinanciere/SI/Index.cshtml")]
-        public IActionResult IndexSI()
-        {
-            return View("Views/DirectionFinanciere/SI/Index.cshtml");
-        }
-
-        [Route("/DirectionFinanciere/Financiere/Index.cshtml")]
-        public IActionResult IndexFinance()
-        {
-            return View("Views/DirectionFinanciere/Financiere/Index.cshtml");
-        }
-        ///////////
-
-        //Teo Berguerre 21/09/2020
-
-        [Route("/DirectionIndustrielle/Index.cshtml")]
-        public IActionResult Indu()
-        {
-            return View("Views/DirectionIndustrielle/Index.cshtml");
-        }
-
-        [Route("/DirectionSupplyChain/Index.cshtml")]
-        public IActionResult SupplyChain()
-        {
-            return View("Views/DirectionSupplyChain/Index.cshtml");
-        }
-
-
-        [Route("/DirectionTechnique/Index.cshtml")]
-        public IActionResult Technique()
-        {
-            return View("Views/DirectionTechnique/Index.cshtml");
-        }
-
-
-        [Route("/DirectionQualite/Index.cshtml")]
-        public IActionResult Qualite()
-        {
-            return View("Views/DirectionQualite/Index.cshtml");
-        }
-
         [Route("/Formulaires/Formulaire.cshtml")]
         public IActionResult Formulaires()
         {

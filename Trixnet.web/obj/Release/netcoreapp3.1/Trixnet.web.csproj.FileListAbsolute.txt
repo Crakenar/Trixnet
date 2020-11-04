@@ -760,3 +760,4 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Release\netcoreapp3.1\Razor\Views\Shared\_ListDocsMenu.cshtml.g.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Release\netcoreapp3.1\Razor\Views\Shared\_ListDocsModal.cshtml.g.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Release\netcoreapp3.1\Razor\Views\Shared\_ModalDocs.cshtml.g.cs
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Release\netcoreapp3.1\Razor\Views\Products\Products.cshtml.g.cs

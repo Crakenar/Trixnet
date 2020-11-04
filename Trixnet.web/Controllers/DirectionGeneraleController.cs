@@ -12,11 +12,17 @@ namespace Trixnet.web.Views.DirectionGenerale
         {
             return View();
         }
-        //Teo Berguerre 25/09/2020 => Add route pour voyages.cshtml
 
+
+        //Direction Generale
+        [Route("/DirectionGenerale")]
+        public IActionResult DirectionGenerale()
+        {
+            return View("Views/DirectionGenerale/IndexDirectionGenerale.cshtml");
+        }
 
         //RH
-        [Route("/DirectionGenerale/RH/RH.cshtml")]
+        [Route("/RH")]
         public IActionResult RH()
         {
             return View("Views/DirectionGenerale/RH/RH.cshtml");
@@ -24,7 +30,7 @@ namespace Trixnet.web.Views.DirectionGenerale
 
 
         //Infras & HSE
-        [Route("/DirectionGenerale/InfraHSE/InfraHSE.cshtml")]
+        [Route("/InfraHSE/InfraHSE.cshtml")]
         public IActionResult InfraHSE()
         {
             return View("Views/DirectionGenerale/InfraHSE/InfraHSE.cshtml");
@@ -32,7 +38,7 @@ namespace Trixnet.web.Views.DirectionGenerale
 
 
         //Secretariat
-        [Route("/DirectionGenerale/Secretariat/Secretariat.cshtml")]
+        [Route("/Secretariat")]
         public IActionResult Secretariat()
         {
             return View("Views/DirectionGenerale/Secretariat/Secretariat.cshtml");

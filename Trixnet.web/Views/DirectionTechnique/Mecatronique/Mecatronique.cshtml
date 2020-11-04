@@ -1,0 +1,65 @@
+@page
+@{
+    //Teo berguerre 04/11/2020
+}
+<!-- Image Showcases -->
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters bg-white">
+            <!-- <div class="col-lg-1 order-lg-1" style="background-color: #f2f5f7;"></div> -->
+            <!-- Section Caroussel /  -->
+            <div class="col-lg-12 order-lg-2">
+                <!-- Carrousel -->
+                <header class="page-service page-secretariat text-white text-center" style="padding-top: 9rem; padding-bottom: 7rem;">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 order-lg-2 mx-auto">
+                                <h1 class="mb-5">Mécatronique</h1>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="row no-gutters">
+                    <blockquote class="col-lg-12 my-auto text-center showcase-text blockquote">
+                        <h4>Notre métier</h4>
+                        <p class="lead mb-0">
+                            Développer, indutrialiser et soutenir la production dans le domaine de la conception mécanique, la microconnectique, l'intégration des
+                            détecteurs et le SAV.
+                            <br />
+                        </p>
+                    </blockquote>
+                    <blockquote class="col-lg-12 my-auto text-center showcase-text blockquote">
+                        <h4>Les missions :</h4>
+                        <p class="lead mb-0">
+                           &mdash; La conception de l'assemblage mécanique des détecteurs et des modules. 
+                            <br />
+                            &mdash; L'industrialisation des composants mécaniques et des modules.
+                            <br />
+                            &mdash; L'intégration des détecteurs avant le passage en production.
+                            <br />
+                            &mdash; L'expertise mécanique des détecteurs en production.
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <img src="~/img/InProgress.jpg" />
+    </div>
+</section>
+
+@*<section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-12 order-lg-2 bg-white">
+                    @{
+                        ViewBag.TypeOfArticle = "ArticleSecretariat";
+                        await Html.RenderPartialAsync("../Shared/_Articles");
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+*@

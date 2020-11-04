@@ -1,0 +1,56 @@
+@page
+@{
+    //Teo berguerre 04/11/2020
+}
+<!-- Image Showcases -->
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters bg-white">
+            <!-- <div class="col-lg-1 order-lg-1" style="background-color: #f2f5f7;"></div> -->
+            <!-- Section Caroussel /  -->
+            <div class="col-lg-12 order-lg-2">
+                <!-- Carrousel -->
+                <header class="page-service page-secretariat text-white text-center" style="padding-top: 9rem; padding-bottom: 7rem;">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 order-lg-2 mx-auto">
+                                <h1 class="mb-5">Direction Qualité</h1>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="row no-gutters">
+                    <blockquote class="col-lg-12 my-auto text-center showcase-text blockquote">
+                        <h4>Notre métier</h4>
+                        <p class="lead mb-0">
+                            Garantir la qualité et la conformité des produits et des services conformément aux éxigences clients, réglementaires et normatives
+                            (améliorer la fiabilité des produits commercialisés par l'analyse des réclamations et la mise en place d'actions corectives).
+                            <br />
+                            Garantir la mise en place et le maintien d'un systeme de management de la qualité conforme aux normes médicales.
+                            <br />
+                            Promouvoir la démarche d'amélioration continue et garantir l'efficacité du système de management de la qualité.
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <img src="~/img/InProgress.jpg" />
+    </div>
+</section>
+
+@*<section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-12 order-lg-2 bg-white">
+                    @{
+                        ViewBag.TypeOfArticle = "ArticleSecretariat";
+                        await Html.RenderPartialAsync("../Shared/_Articles");
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+*@

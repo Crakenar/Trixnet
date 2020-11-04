@@ -82,30 +82,60 @@
                             Equipes
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li class="dropdown-submenu dropright">
-                                <a class="dropdown-item dropdown-toggle" href="~/DirectionGenerale/IndexDirectionGenerale.cshtml">Direction Générale</a>
-                                @* <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"></button>*@
+                            <!--Direction Générale-->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="~/DirectionGenerale">Direction Générale</a>
                                 <ul class="dropdown-menu ">
-                                    <li><a class="dropdown-item" href="~/DirectionGenerale/IndexDirectionGenerale.cshtml">Direction Générale</a></li>
-                                    <li><a class="dropdown-item" href="~/DirectionGenerale/Secretariat/Secretariat.cshtml">Secretariat</a></li>
-                                    <li><a class="dropdown-item" href="~/DirectionGenerale/RH/RH.cshtml">Ressources Humaines</a></li>
+                                    <li><a class="dropdown-item" href="~/DirectionGenerale">Direction Générale</a></li>
+                                    <li><a class="dropdown-item" href="~/Secretariat">Secretariat</a></li>
+                                    <li><a class="dropdown-item" href="~/RH">Ressources Humaines</a></li>
                                 </ul>
                             </li>
-                            <li><a class="dropdown-item dropdownMultiple" href="~/DirectionGenerale/IndexDirectionGenerale.cshtml"></a></li>
-                            @*<li><a class="dropdown-item" href="~/DirectionIndustrielle/Index.cshtml">Direction Industrielle</a></li>
-                            <li><a class="dropdown-item" href="~/DirectionTechnique/Index.cshtml">Direction Technique</a></li>*@
-                            <li class="dropdown-submenu dropright">
-                                <a class="dropdown-item dropdown-toggle" href="~/DirectionFinanciere/Index.cshtml">Direction Financière</a>
-                                @* <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"></button>*@
+                            <!--Direction Industrielle-->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="~/DirectionIndustrielle">Direction Industrielle</a>
+                                <ul class="dropdown-menu ">
+                                    <li><a class="dropdown-item" href="~/IngenierieProduits">Ingénierie Produit</a></li>
+                                    <li><a class="dropdown-item" href="~/FrontEnd">Front-End &amp; Scintillateur</a></li>
+                                    <li><a class="dropdown-item" href="~/BackEnd">Back-End</a></li>
+                                    <li><a class="dropdown-item" href="~/WeekEnd/">Week-End</a></li>
+                                    <li><a class="dropdown-item" href="~/SAV">SAV</a></li>
+                                    <li><a class="dropdown-item" href="~/Maintenance">Maintenance</a></li>
+                                    <li><a class="dropdown-item" href="~/ProcedesMethodes">Procédés / Méthodes</a></li>
+                                </ul>
+                            </li>
+                            <!--Direction Technique-->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="~/DirectionTechnique">Direction Technique</a>
+                                <ul class="dropdown-menu ">
+                                    <li><a class="dropdown-item" href="~/STC">Support Technique Client</a></li>
+                                    <li><a class="dropdown-item" href="~/ProjetsProduits">Projets / Nouveaux Produits</a></li>
+                                    <li><a class="dropdown-item" href="~/SystemDesignOptimisation">System Design &amp; Optimisation</a></li>
+                                    <li><a class="dropdown-item" href="~/QualifTest">Qualif &amp; Test / Métrologie</a></li>
+                                    <li><a class="dropdown-item" href="~/ElectroniqueASIC">Electronique &amp; ASIC</a></li>
+                                    <li><a class="dropdown-item" href="~/Mecatronique">Mécatronique</a></li>
+                                </ul>
+                            </li>
+                            <!--Direction Financiere-->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="~/DirectionFinanciere">Direction Financière</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="~/DirectionFinanciere/Index.cshtml">Direction Financière</a></li>
-                                    <li><a class="dropdown-item" href="~/DirectionFinanciere/SI/Index.cshtml">Systeme Information</a></li>
-                                    <li><a class="dropdown-item" href="~/DirectionFinanciere/Financiere/Index.cshtml">Finance</a></li>
+                                    <li><a class="dropdown-item" href="~/Index">Direction Financière</a></li>
+                                    <li><a class="dropdown-item" href="~/SI">Systeme Information</a></li>
+                                    <li><a class="dropdown-item" href="~/Financiere">Finance</a></li>
                                 </ul>
                             </li>
-
-                           @*<li><a class="dropdown-item" href="~/DirectionSupplyChain/Index.cshtml">Direction Supply Chaine</a></li>
-                            <li><a class="dropdown-item" href="~/DirectionQualite/Index.cshtml">Direction Qualité</a> </li>*@
+                            <!--Direction Supply Chain-->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="~/DirectionSupplyChain">Direction Supply Chain</a>
+                                <ul class="dropdown-menu ">
+                                    <li><a class="dropdown-item" href="~/ManagementFournisseurs">Management Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="~/Logistique">Logistique Site</a></li>
+                                    <li><a class="dropdown-item" href="~/KAM">Key Account Management</a></li>
+                                    <li><a class="dropdown-item" href="~/PlanifSCProjet">Planif Flux et SC Projet</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="~/Qualite">Direction Qualité</a> </li>
                         </ul>
                     </li>
                     <li class="nav-item">

@@ -1,0 +1,55 @@
+@page
+@{
+    //Teo berguerre 04/11/2020
+}
+<!-- Image Showcases -->
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters bg-white">
+            <!-- <div class="col-lg-1 order-lg-1" style="background-color: #f2f5f7;"></div> -->
+            <!-- Section Caroussel /  -->
+            <div class="col-lg-12 order-lg-2">
+                <!-- Carrousel -->
+                <header class="page-service page-secretariat text-white text-center" style="padding-top: 9rem; padding-bottom: 7rem;">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 order-lg-2 mx-auto">
+                                <h1 class="mb-5">Week End</h1>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="row no-gutters">
+                    <blockquote class="col-lg-12 my-auto text-center showcase-text blockquote">
+                        <h4>Notre métier</h4>
+                        <p class="lead mb-0">
+                            L'équipe week end a été crée en 2005 pour faire fave à une augmentation de la charge. Elle a pour mission de favoriser
+                            le flux de production partout oû lq capacité des ateliers est limité en semaine, dans le respect de la qualité.
+                            Elle est orienté production avant tout, avec un pilotage réactif qui prend comme donnée d'entrée les aléas de la
+                            semaine et les outputs qui restent à faire le vendredi pour atteindre les objectifs hebdomadaires.
+                        </p>
+                    </blockquote>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <img src="~/img/InProgress.jpg" />
+    </div>
+</section>
+
+@*<section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-12 order-lg-2 bg-white">
+                    @{
+                        ViewBag.TypeOfArticle = "ArticleSecretariat";
+                        await Html.RenderPartialAsync("../Shared/_Articles");
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+*@

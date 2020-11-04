@@ -9,11 +9,30 @@ namespace Trixnet.web.Views.DirectionFinanciere
     public class DirectionFinanciereController : Controller
     {
 
-        //Teo Berguerre 21/09/2020
-        public IActionResult Index()
+        //Teo Berguerre 04/11/2020
+/*        public IActionResult Index()
         {
             return View();
+        }*/
+
+        [Route("/Index")]
+        public IActionResult IndexDirectionFinanciere()
+        {
+            return View("Views/DirectionFinanciere/Index.cshtml");
         }
+
+        [Route("/SI")]
+        public IActionResult IndexSI()
+        {
+            return View("Views/DirectionFinanciere/SI/Index.cshtml");
+        }
+
+        [Route("/Financiere")]
+        public IActionResult IndexFinance()
+        {
+            return View("Views/DirectionFinanciere/Financiere/Index.cshtml");
+        }
+
 
         [Route("/DirectionFinanciere/Projets.cshtml")]
         public IActionResult Projets()

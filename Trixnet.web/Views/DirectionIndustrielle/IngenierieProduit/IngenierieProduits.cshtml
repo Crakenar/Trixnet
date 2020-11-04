@@ -1,0 +1,64 @@
+@page
+@{
+    //Teo berguerre 04/11/2020
+}
+<section>
+    <!-- Image Showcases -->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters bg-white">
+                <!-- <div class="col-lg-1 order-lg-1" style="background-color: #f2f5f7;"></div> -->
+                <!-- Section Caroussel /  -->
+                <div class="col-lg-12 order-lg-2">
+                    <!-- Carrousel -->
+                    <header class="page-service page-secretariat text-white text-center" style="padding-top: 9rem; padding-bottom: 7rem;">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-8 order-lg-2 mx-auto">
+                                    <h1 class="mb-5">Ingénierie Produits</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="row no-gutters">
+                        <blockquote class="col-lg-12 my-auto text-center showcase-text blockquote">
+                            <h4>Notre métier</h4>
+                            <p class="lead mb-0">
+                                L'ingénierie Produits est garante de la Qualité* du produit. En interface avec les clients, les projets et la production, elle s'appuie sur les
+                                compétences technique de la Direction Technique.
+                            </p>
+                            <p><strong>*Qualité</strong>= l'adéquation du produit aux besoins des clients </p>
+                            <table class="" style="margin : auto">  
+                                <tr>
+                                    <th>Performances</th>
+                                    <th>Fiabilité</th>
+                                    <th>Fabricabilité</th>
+                                </tr>
+                                <tr>
+                                    <th style="padding-right: 30px;">Exigences légales et normatives</th>
+                                    <th style="padding-right: 30px;">Qualité des appros</th>
+                                    <th style="padding-right: 30px;">Archivage et traçabilité</th>
+                                </tr>
+                            </table>
+                        </blockquote>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-12 order-lg-2 bg-white">
+                    @{
+                        ViewBag.TypeOfArticle = "ArticleSecretariat";
+                        await Html.RenderPartialAsync("../Shared/_Articles");
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
