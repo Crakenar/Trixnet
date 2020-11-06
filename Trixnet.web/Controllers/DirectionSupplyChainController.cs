@@ -12,6 +12,7 @@ namespace Trixnet.web.Controllers
         {
             return View();
         }
+
         [Route("/DirectionSupplyChain")]
         public IActionResult SupplyChain()
         {

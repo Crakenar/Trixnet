@@ -1,9 +1,14 @@
 ﻿using System;
 using Microsoft.Office.Core;
-using Application = Microsoft.Office.Interop.PowerPoint.Application;
+using ApplicationPPT = Microsoft.Office.Interop.PowerPoint.Application;
 using Microsoft.Office.Interop.PowerPoint;
 using ConvertApiDotNet;
 using System.IO;
+using System.Linq;
+using Spire.Pdf;
+using System.Text;
+using System.Collections;
+using Spire.Pdf.OPC;
 
 /// <summary>
 /// Avec l'utilisation de la librairie  Aspose.Slides.NET
@@ -43,6 +48,7 @@ namespace Trixnet.web.Services
         //JPEG ou GIF car moins lourd 
         public void transformPPTIntoJPEG(string powerPoint, string pathDir, string type)
         {
+            
             //marche mais ajoute du texte sur les images x) 
             /* using (Presentation presentation = new Presentation(powerPoint))
              {
@@ -56,16 +62,38 @@ namespace Trixnet.web.Services
              }*/
             if (System.IO.Directory.GetFiles(pathDir).Length == 0)
             {
-                Application pptApplication = new Application();
-                Presentation presentation = pptApplication.Presentations.Open(powerPoint, MsoTriState.msoFalse, MsoTriState.msoFalse, MsoTriState.msoFalse);
-                int i = 0;
-                foreach (Microsoft.Office.Interop.PowerPoint.Slide objSlide in presentation.Slides)
+                string typesOfFile = powerPoint.Substring(powerPoint.Length - 4, powerPoint.Length);
+                switch (typesOfFile)
                 {
-                    objSlide.Export(pathDir + @"\Slide" + i + "."+type, type);
-                    i++;
+                    case ".ppt":
+                        ApplicationPPT pptApplication = new ApplicationPPT();
+                        Presentation presentation = pptApplication.Presentations.Open(powerPoint, MsoTriState.msoFalse, MsoTriState.msoFalse, MsoTriState.msoFalse);
+                        int i = 0;
+                        foreach (Microsoft.Office.Interop.PowerPoint.Slide objSlide in presentation.Slides)
+                        {
+                            objSlide.Export(pathDir + @"\Slide" + i + "." + type, type);
+                            i++;
+                        }
+                        presentation.Close();
+                        pptApplication.Quit();
+                        break;
+                        //Iterer que pour 3 .Take(3) car SpireFree ne convertis en img que les 3 premieres page du pdf
+                    case ".pdf":
+                       /* PdfDocument doc = new PdfDocument();
+                        doc.LoadFromFile(powerPoint);
+                        StringBuilder buffer = new StringBuilder();
+                        IList < img > = new List<>();
+                        foreach(PdfPageBase page in doc.Pages.Take(3))
+                        {
+                            images.Add(image);
+                        }*/
+                        break;
+                    case ".doc":
+                        break;
+                    case "xls":
+                        break;
                 }
-                presentation.Close();
-                pptApplication.Quit();
+               
             }
 
 

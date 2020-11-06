@@ -1,6 +1,7 @@
 @page
 @{
     //Teo berguerre 04/11/2020
+    string responsable = "Gérald Cave";
 }
 <!-- Image Showcases -->
 <section class="showcase">
@@ -24,19 +25,97 @@
                     <blockquote class="col-lg-12 my-auto text-center showcase-text blockquote">
                         <h4>Notre métier</h4>
                         <p class="lead mb-0">
-                            Nous recueillons les attentes de nos clients et nous nous assurons que leurs besoins soient pris en compte dans Trixell.
-                            Nous assurerons aussi les garants des relations contractuelles avec nos clients.
-                            <br />
-                            Nous sommes aussi les garants des relations contractuelles avec nos clients.
+                            Nous validons la demande client auprès de la direction pour driver tous les processus de Trixell. Nous sommes aussi les garants des
+                            relations contractuelles et commerciales avec nos clients ainsi que garant du contrôle des exportations et les déclarations
+                            d'origine préférentielle de nos produits.
                         </p>
                     </blockquote>
                 </div>
+                <section class="features-icons bg-light text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <!--Manager KAM-->
+                            <div class="modal fade" id="manager" tabindex="-1" role="dialog" aria-labelledby="managerModal" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content ">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="managerModal">Le Key Account Manager (Responsable Grands Comptes) : @responsable</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <ul>
+                                                <li>Il est le garant de la relation commerciale avec nos clients.</li>
+                                                <li>Il est le relais dans la négociation des contrats, des prévisions, de la qualité, de la 
+                                                logistique et surtout veille à la satisfaction client.</li>
+                                                <li>Il valide la demande client auprès de la direction pour driver tous les processus de 
+                                                Trixell : Budget, PIC...</li>
+                                                <li>Il est responsable des contrôles des exportations.</li>
+                                                <li>Il assure la livraison des documents déclaration d'origine préférentielle pour nos clients.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#manager" data-toggle="modal" data-target="#manager" class="link-picto col-lg-3">
+                                <div class="features-icons-item">
+                                    <div class="features-icons-icon d-flex mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                        <i class="fas fa-user-cog m-auto trix-blue picto"></i>
+                                    </div>
+                                    <h3 class="">Le Key Account Manager</h3>
+                                </div>
+                            </a>
+                            <!--Alternant-->
+                            <div class="modal fade" id="alternant" tabindex="-1" role="dialog" aria-labelledby="alternantModal" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="alternantModal">Les alternants du Key Account Management</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Un alternant s'occupe de la partie contrôle d'exportations (analyse et préparation des documents d'export contrôle CECC).
+                                            Il prépare les documents CECCs pour tous les fournisseurs (suivis et contrôle des retours). Il analyse les données fournisseurs
+                                            reçus (CECCs) et remplis les formulaires demandés par les clients qui assure ainsi les données sont rensignés dans SAP.
+                                            Il propose les actions et solutions retenues. Il aide également le SAV pour saisir les données de plaintes clients (IQOS et SAP),
+                                            analyse et aide dans la préparation les documents pour les clients (déclaration d'origine préférentiel 'LTSD' et non préférentiel)</p>
+                                            <hr />
+                                            <p>Un autre alternant analyse et prépare les documents pour les clients (déclaratio d'origine préférentiel 'LSTD' et non préférentiel).
+                                            Il prépare les documents LTSD pour tous les fournisseurs (suivis et contrôle des retours). Il analyse les données fournisseurs
+                                            reçues et remplis les formulaires demandés par les clients. Il met à jour l'environnement budgétaire pour les ventes et il participe à la préparation
+                                            des offres prix annuel pour tous les clients. Il analyse la processus du gestion de la demande de Trixell, il crée un cahier des charges
+                                            pour évoluer vers l'utilisation des outils et il suit et aide dans l'implémentation de la nouvelle façon de gérer la demande.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#alternant" data-toggle="modal" data-target="#alternant" class="link-picto col-lg-3">
+                                <div class="features-icons-item">
+                                    <div class="features-icons-icon d-flex mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                        <i class="fas fa-users m-auto trix-blue picto"></i>
+                                    </div>
+                                    <h3 class="">Les Alternants</h3>
+                                </div>
+                            </a>
+                            <div class="col-lg-3"></div>
+                        </div>
+                        <a href="#">A savoir</a>
+                    </div>
+                </section>
             </div>
-        </div>
-    </div>
-    <div>
-        <img src="~/img/InProgress.jpg" />
-    </div>
+            @*    <div>
+                    <img src="~/img/InProgress.jpg" />
+                </div>*@
 </section>
 
 @*<section class="showcase">

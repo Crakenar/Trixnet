@@ -4,6 +4,12 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    string who = "";
+    if(@ViewBag.Who != null)
+    {
+        who = @ViewBag.Who;
+    }
+
     //Permet de savoir le type d'article à afficher
     string type = ViewContext.ViewBag.TypeOfArticle;
     //Combien d'article prendre de la BD Orchard
@@ -18,7 +24,7 @@
 <div class="bg-white">
     <div class="trixell-X AppSection SectionGD SectionHB">
         <div class="container showcase-text">
-            <h2 class="jaapooki" style="font-size: 1.5rem; color: rgb(19, 133,203);"><i class="fas fa-newspaper"></i>   Actualités</h2>
+            <h2 class="jaapooki" style="font-size: 1.5rem; color: rgb(19, 133,203);"><i class="fas fa-newspaper"></i>   Actualités @who </h2>
         </div>
         @foreach (var articles in tab_articles)
         {

@@ -13,7 +13,7 @@
 @{
     var tab_meteoSI = await Orchard.GetRecentContentItemsByContentTypeAsync("MeteoSI", 1);
     string pathCMS = "../../../../Media/";
-    string imgPath = @pathCMS + @tab_meteoSI.First().Content.MeteoSI.MediaMeteoSI.Paths[0];
+    string imgPath = ""; //@pathCMS + @tab_meteoSI.First().Content.MeteoSI.MediaMeteoSI.Paths[0];
 
     var heure = DateTime.Now.ToString();
     //ViewData["Title"] = "Home Page";
@@ -42,10 +42,10 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <h3>@tab_meteoSI.First()</h3>
+                                            @*<h3>@tab_meteoSI.First()</h3>*@
                                             <br />
                                             <p><strong>Description</strong></p>
-                                            <p>@tab_meteoSI.First().Content.MarkdownBodyPart.Markdown</p>
+                                            @*<p>@tab_meteoSI.First().Content.MarkdownBodyPart.Markdown</p>*@
                                         </div>
                                         <div class="modal-footer" style="background-image:url(@imgPath);">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h2>@tab_meteoSI.First()</h2>
+                           @* <h2>@tab_meteoSI.First()</h2>*@
                             <a href="#meteoSI" data-toggle="modal" data-target="#meteoSI">
                                 <img class="w-100" src="@imgPath"  height="100" />
                             </a>
@@ -89,7 +89,7 @@
                     <!-- Support -->
                     <div class="SectionHB SectionGD AppSection">
                         <div class="titreSection">
-                            <a href="~/DirectionFinanciere/SI/Help.cshtml">
+                            <a href="~/SI/Help">
                                 <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(19, 133,203);">
                                     <i class="fas fa-headset"></i>      Support informatique <i class="fas fa-angle-right"></i>
                                 </h2>

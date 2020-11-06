@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "38X7N/lraaEP8LZnZat/ckdFw0oS18yhgY5g+JVjR5tnMS3i3aPUMUuRQ0MQL4Heco82NKsZVkdPX7qgqgiDkw==",
+  "dgSpecHash": "oxtx+k4GSdTTBcBHwC6GvOzkwZx/fqwI7J69kpM/fj+f8I3AoQobGPmQ7izOvYDY7SPFSkApD0L23ui+x9cZIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\BURINDUS44\\Documents\\Webmaster\\Trixnet - Copie\\Trixnet.web\\Trixnet.web\\Trixnet.web.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\dapper.strongname\\2.0.35\\dapper.strongname.2.0.35.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\esprima\\1.0.1251\\esprima.1.0.1251.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\fluid.core\\1.0.0-beta-9651\\fluid.core.1.0.0-beta-9651.nupkg.sha512",
+    "C:\\Users\\BURINDUS44\\.nuget\\packages\\freespire.pdf\\6.10.6\\freespire.pdf.6.10.6.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\graphql\\2.4.0\\graphql.2.4.0.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\graphql-parser\\3.0.0\\graphql-parser.3.0.0.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\htmlsanitizer\\5.0.319\\htmlsanitizer.5.0.319.nupkg.sha512",
@@ -320,6 +321,7 @@
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\safemode\\1.0.0-rc2-13450\\safemode.1.0.0-rc2-13450.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\sixlabors.imagesharp\\1.0.0-rc0002\\sixlabors.imagesharp.1.0.0-rc0002.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\sixlabors.imagesharp.web\\1.0.0-rc0003\\sixlabors.imagesharp.web.1.0.0-rc0003.nupkg.sha512",
+    "C:\\Users\\BURINDUS44\\.nuget\\packages\\skiasharp\\1.68.0\\skiasharp.1.68.0.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
     "C:\\Users\\BURINDUS44\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",

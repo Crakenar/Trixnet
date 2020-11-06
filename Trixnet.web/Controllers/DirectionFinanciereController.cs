@@ -40,7 +40,7 @@ namespace Trixnet.web.Views.DirectionFinanciere
             return View("Views/DirectionFinanciere/SI/Projets.cshtml");
         }
 
-        [Route("/DirectionFinanciere/Help.cshtml")]
+        [Route("/SI/Help")]
         public IActionResult Help()
         {
             return View("Views/DirectionFinanciere/SI/Help.cshtml");

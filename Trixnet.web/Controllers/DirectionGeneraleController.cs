@@ -38,6 +38,7 @@ namespace Trixnet.web.Views.DirectionGenerale
 
 
         //Secretariat
+        /* [Route("Trixnet.web/DirectionGeneraleController/Secretariat")]*/
         [Route("/Secretariat")]
         public IActionResult Secretariat()
         {
