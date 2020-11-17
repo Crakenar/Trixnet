@@ -74,12 +74,14 @@
                 </div>
                 <!--Ici c'est l'affichage simple dans page HTML-->
                 <div class="container showcase-text">
-                    <a href="#article-@articles.ContentItemId" class="row link-news" data-toggle="modal" data-target="#article-@articles.ContentItemId">
-                        <div class="col-lg-4 text-white img-news" style="background-image: url('@item');"></div>
-                        <div class="col-lg-8 text-news">
-                            <h2 class="title-overflow">@(articleTitre.Length > maxCharacterTitle ? articleTitre.Substring(0, maxCharacterTitle) : articleTitre)</h2>
-                            <p class="lead mb-0" style="text-justify: distribute;">@(articleText.Length > maxCharacterDescription ?  articleText.Substring(0, maxCharacterDescription) :  articleText)<p>
-                             @*<p class="lead mb-0" style="text-justify: distribute;"> @await Orchard.MarkdownToHtmlAsync((string)articles.Content.MarkdownBodyPart.Markdown)</p>*@  
+                    <a href="#article-@articles.ContentItemId" class="link-news" data-toggle="modal" data-target="#article-@articles.ContentItemId">
+                        <div class="row">
+                            <div class="col-lg-4 text-white img-news" style="background-image: url('@item');"></div>
+                            <div class="col-lg-8 text-news">
+                                <h2 class="title-overflow">@(articleTitre.Length > maxCharacterTitle ? articleTitre.Substring(0, maxCharacterTitle) : articleTitre)</h2>
+@*                                <p class="lead mb-0" style="text-justify: distribute;">@(articleText.Length > maxCharacterDescription ?  articleText.Substring(0, maxCharacterDescription) :  articleText)<p>
+*@                                    <span class="lead mb-0" style="text-justify: distribute;"> @await Orchard.MarkdownToHtmlAsync((string)articles.Content.MarkdownBodyPart.Markdown)</span>
+                            </div>
                         </div>
                     </a>
                     @if (documents.Count > 0)
