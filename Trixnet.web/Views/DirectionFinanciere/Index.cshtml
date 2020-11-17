@@ -1,31 +1,17 @@
 @page
 @inject OrchardCore.IOrchardHelper Orchard
-
-@model Trixnet.web.Controllers.IndexModel
 @{
-    //Derniere modification Teo berguerre 23/09/2020 => Fil d'actualite avec modal
-    /*Page direction FINANCIERE
-    Celle-ci recupere les Articles et Projets des Finances / SI afin de les afficher
-    A partir de cette page on peut acceder à :
-    SI
-    - Help.cshtml
-    - Stats.cshtml
-    Finance
-    - InstructionFormulaire.cshtml
-    */
-
-
-    int how_many_retrieved = 2;
-    int actualite_finance = 4;
-    //On récupere tout les items de type Projets et les Articles du SI
-    var tab_projets = await Orchard.GetRecentContentItemsByContentTypeAsync("Projets", how_many_retrieved);
-    var tab_articlesSI = await Orchard.GetRecentContentItemsByContentTypeAsync("ArticleSI", how_many_retrieved);
-    var tab_articlesFinance = await Orchard.GetRecentContentItemsByContentTypeAsync("ArticleFinance", actualite_finance);
-
+    //Derniere modification Teo berguerre 16/09/2020 Utilisation de la vue partielle concernant les articles
+    //Et mise en place d'un des tab
 }
+@*@section Styles{
+        <link href="@Url.Content("~/css/DirectionFinanciere.css")" rel="stylesheet" type="text/css"/>
+    }*@
+<head>
 
-<link rel="stylesheet" href="~/css/DirectionFinanciere.css">
+</head>
 <section>
+
     <!-- Image Showcases -->
     <section class="showcase">
         <div class="container-fluid p-0">
@@ -117,7 +103,7 @@
                         <h2 style="font-size: 2rem;"><i class="fas fa-newspaper"></i> Fil d'actualités</h2>
                         <div class="container">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" href="#Finance" data-toggle="tab" role="tab" aria-controls="Finance" aria-selected="true" style="color : black!important">Articles Finance</a></li>
+                                <li class="nav-item"> <a class="nav-link active" href="#Finance" data-toggle="tab" role="tab" aria-controls="Finance" aria-selected="true" style="color : black!important;">Articles Finance</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="#SI" data-toggle="tab" role="tab" aria-controls="SI" aria-selected="false" style="color : black!important">Articles SI</a></li>
                             </ul>
                             <div class="tab-content">
@@ -137,6 +123,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <script>
                             $('#myTab a').on('click', function (e) {
                                 e.preventDefault();
@@ -149,45 +136,4 @@
         </div>
     </section>
 </section>
-
-<!-- Bootstrap core JavaScript -->
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-<!--<script>
-    var doc1 = document.getElementById("1");
-    var doc2 = document.getElementById("2");
-    doc1.addEventListener('click', function () {
-        console.log("doc 1 cliqué")
-        doc1.tab('hide');
-        doc2.tab('show');
-    });
-    doc2.addEventListener('click', function () {
-        console.log("doc 2 cliqué")
-        doc1.tab('show');
-        doc2.tab('hide');
-    });-->
-@*    $('a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    })*@
-<!--</script>-->
-@*<script>
-        const tabs = document.querySelectorAll('[data-tab-target]');
-        const tabContents = document.querySelectorAll('[data-tab-content]');
-
-        tabs.forEach(function (tab) {
-            tab.addEventListener('click', function () {
-                const target = document.querySelector(tab.dataset.tabTarget);
-                tabContents.forEach(function (tabContent) {
-                    tabContent.classList.remove('active');
-                });
-                tabs.forEach(function (tab) {
-                    tab.classList.remove('active');
-                });
-                tab.classList.add('active');
-                target.classList.add('active');
-            });
-        })
-    </script>*@
-
+<link rel="stylesheet" href="~/css/DirectionFinanciere.css">

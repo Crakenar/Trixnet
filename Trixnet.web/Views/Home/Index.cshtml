@@ -11,6 +11,7 @@
 
 @inject OrchardCore.IOrchardHelper Orchard
 @{
+    string pathHSE = "wwwroot/img/HSE/";
     var tab_meteoSI = await Orchard.GetRecentContentItemsByContentTypeAsync("MeteoSI", 1);
     string pathCMS = "../../../../Media/";
     string imgPath = ""; //@pathCMS + @tab_meteoSI.First().Content.MeteoSI.MediaMeteoSI.Paths[0];
@@ -53,9 +54,9 @@
                                     </div>
                                 </div>
                             </div>
-                           @* <h2>@tab_meteoSI.First()</h2>*@
+                            @* <h2>@tab_meteoSI.First()</h2>*@
                             <a href="#meteoSI" data-toggle="modal" data-target="#meteoSI">
-                                <img class="w-100" src="@imgPath"  height="100" />
+                                <img class="w-100" src="@imgPath" height="100" />
                             </a>
                             <!--<img class="d-block w-100" src="img/météoSI.png" alt="Second slide">-->
                         </div>
@@ -79,10 +80,10 @@
                                 <a class="app-link">Fonctions</a>
                             </li>
                             <li class="app-item">
-                                <a class="app-link">People Online</a>
+                                <a class="app-link" href="https://intranet.peopleonline.corp.thales" target="_blank" style="color:black">People Online</a>
                             </li>
                             <li class="app-item">
-                                <a class="app-link">Messagerie</a>
+                                <a class="app-link" href="mailto:" style="color:black">Messagerie</a>
                             </li>
                         </ul>
                     </div>
@@ -91,9 +92,57 @@
                         <div class="titreSection">
                             <a href="~/SI/Help">
                                 <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(19, 133,203);">
-                                    <i class="fas fa-headset"></i>      Support informatique <i class="fas fa-angle-right"></i>
+                                    <i class="fas fa-headset"></i>&emsp; Support informatique
                                 </h2>
                             </a>
+                        </div>
+                    </div>
+                    <div class="SectionHB SectionGD AppSection">
+                        <div class="titreSection">
+                            <a href="@ViewBag.LinkHSE" target="_blank">
+                                <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(19, 133,203);">
+                                    <i class="fas fa-fire-extinguisher"></i>&emsp;Intervention Infras
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                    <!--Modal pour demande urgentes HSE-->
+                    <div class="modal fade" id="HSE" tabindex="-1" role="dialog" aria-labelledby="HSEModal" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content modal-lg">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="HSEModal">Guides et Formulaires</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <span style="color:forestgreen; text-align : center">
+                                        <strong>
+                                            Si vous ne trouvez pas le document souhaité, faites une recherche dans le
+                                            <a href="#">référenciel RH ISO </a>
+                                        </strong>
+                                    </span>
+                                    <br />
+                                    <br />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="SectionHB SectionGD AppSection" style="border-color : red">
+                        <div class="titreSection">
+                            <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(255,153,51)">
+                                <i class="fas fa-fire-extinguisher"></i>&emsp;HSE, en cas d'urgence
+                            </h2>
+                            <div style="height:200px; background-image: url('../img/InProgress.jpg');  background-size: contain;">
+                                <a href="#HSE" data-toggle="modal" data-target="#HSE">
+                                    <p><strong>Procédures d'Urgence</strong></p>
+                                </a>
+                                <p>Liens vers documents utiles</p>
+                            </div>
                         </div>
                     </div>
 

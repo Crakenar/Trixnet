@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Castle.Core.Internal;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Query;
-using OrchardCore.Admin.Controllers;
-using OrchardCore.Data;
-using OrchardCore.Environment.Shell;
-using SixLabors.ImageSharp;
-
 using Trixnet.web.Models;
-using Lucene.Net.Store;
 
 namespace Trixnet.web.Controllers
 {
@@ -22,7 +12,6 @@ namespace Trixnet.web.Controllers
         public HomeController(ConnectionStringClass connection)
         {
             _connection = connection;
-
             /* Transforme le .ppt en multiples png (1 slide = 1 image)
              Probleme :
              Chemin en dur / Objectif => lier cela à OrchardCore ?
@@ -44,6 +33,8 @@ namespace Trixnet.web.Controllers
         [Route("/")]
         public IActionResult Index()
         {
+            string val1 = ConfigurationManager.variablesSettings["App:LinkHelpHSE:Value"];
+            ViewBag.LinkHSE = val1;
             // var results = _connection.trix_Document.ToList();
             //recuperer les images pour le caroussel
             string pathDir = "wwwroot/img/Profiles/";
@@ -64,6 +55,8 @@ namespace Trixnet.web.Controllers
         [Route("/LiensPratiques")]
         public IActionResult LiensPratiques()
         {
+            string val1 = ConfigurationManager.variablesSettings["App:LinkHelpHSE:Value"];
+            ViewBag.LinkHSE = val1;
             return View("Views/LiensPratiques/LiensPratiques.cshtml");
         }
 

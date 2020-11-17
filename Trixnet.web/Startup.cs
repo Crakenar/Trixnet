@@ -11,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Trixnet.web.Models;
 using Microsoft.EntityFrameworkCore;
 
+using Trixnet.web.Services;
+
 namespace Trixnet.web
 {
     public class Startup
@@ -18,6 +20,11 @@ namespace Trixnet.web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+           /* var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("Services/options.json");
+            var config = builder.Build();
+            var appConfig = new OptionsClass();
+            config.GetSection("App").Bind(appConfig);
+            ViewBag.Link = appConfig.link.linkValue;*/
         }
 
         public IConfiguration Configuration { get; }
@@ -25,9 +32,8 @@ namespace Trixnet.web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             //services.AddDbContext<ConnectionStringClass>(options => options.UseSqlServer("Server=TRIXBURINDUS44\\SQLEXPRESS;Database=Trixnet;User Id=webmaster;Password=Trixell123!"));
-            //services.AddDbContext<ConnectionStringClass>(options => options.UseSqlServer("Server=trixsql03;Database=Trixnet;User Id=Trixnet;Password=Tr1xnet"));
-            services.AddDbContext<ConnectionStringClass>(options => options.UseSqlServer("Server=trixsql05;Database=Trixnet;User Id=user-sa;Password=I&J8g=$0TB"));
+             services.AddDbContext<ConnectionStringClass>(options => options.UseSqlServer("Server=TRIXBURINDUS44\\SQLEXPRESS;Database=Trixnet;User Id=webmaster;Password=Trixell123!"));
+            //services.AddDbContext<ConnectionStringClass>(options => options.UseSqlServer("Server=trixsql05;Database=Trixnet;User Id=user-sa;Password=I&J8g=$0TB"));
             services.AddOrchardCms();
         }
 

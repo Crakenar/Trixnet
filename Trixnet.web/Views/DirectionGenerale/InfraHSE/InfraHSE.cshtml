@@ -1,6 +1,139 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@page
 @{
+    //Teo berguerre 17/11/2020 blocks urgence
 }
-Page infra HSE
+
+<link rel="stylesheet" href="~/css/InfraHSE.css">
+<!-- Image Showcases -->
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <!-- <div class="col-lg-1 order-lg-1" style="background-color: #f2f5f7;"></div> -->
+            <!-- Section Caroussel /  -->
+            <div class="col-lg-12 order-lg-2">
+                <!-- Carrousel -->
+                <header class="page-service page-secretariat text-white text-center" style="padding-top: 9rem; padding-bottom: 7rem;">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 order-lg-2 mx-auto">
+                                <h1 class="mb-5">Infras &amp; HSE Site</h1>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="row no-gutters">
+                    <blockquote class="col-lg-12 my-auto showcase-text blockquote">
+                        <h4>Notre raison d'être</h4>
+                        <p class="lead mb-0">
+                            Fournir avec une vision globale site, Support, Service et Conseil aux activités des 3 lignes de produits du site, afin de leur permettre
+                            un développement optimisé en intégrant les risques Sécurité, Sûreté et Environnement :
+                            <br />
+                            <br />
+
+                        </p>
+                        Pour y parvenir : <br />
+                        <br />
+                        &emsp;&emsp;&emsp;&emsp;Réactivité <br />
+                        &emsp;&emsp;&emsp;&emsp;Maîtrise de nos processus<br />
+                        &emsp;&emsp;&emsp;&emsp;Maîtrise de nos fournissezurs<br />
+                        &emsp;&emsp;&emsp;&emsp;Vision et intérêt collectif (site)<br />
+                        &emsp;&emsp;&emsp;&emsp;Accompagnement (écoute,formation , implication)<br />
+                        &emsp;&emsp;&emsp;&emsp;Amélioration continue
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div>
+            <!--Modal pour demande urgentes HSE-->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="SectionHB SectionGD AppSection">
+                                <div class="titreSection">
+                                    <a href="@ViewBag.LinkHSE" target="_blank">
+                                        <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(19, 133,203);">
+                                            <i class="fas fa-fire-extinguisher"></i>&emsp;Demance Intervention Infras
+                                        </h2>
+                                    </a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="SectionHB SectionGD AppSectionRed">
+                                <div class="titreSection" style="height : 175px">
+                                    <a href="teddy.ted.thales/TeddyMi/Verif" target="_blank">
+                                        <h2 class="jaapooki text-center" style="font-size: 1.3rem; color: red; ">
+                                            &emsp;Cas d'urgence
+                                        </h2>
+                                    </a>
+                                    <a>1er lien</a>
+                                    <a>2eme lien</a>
+                                    <a>3eme lien</a>
+                                    <a>4eme lien</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="modal fade" id="HSE" tabindex="-1" role="dialog" aria-labelledby="HSEModal" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content modal-lg">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="HSEModal">Guides et Formulaires</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <span style="color:forestgreen; text-align : center">
+                                        <strong>
+                                            Si vous ne trouvez pas le document souhaité, faites une recherche dans le
+                                            <a href="#">référenciel RH ISO </a>
+                                        </strong>
+                                    </span>
+                                    <br />
+                                    <br />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="SectionHB SectionGD AppSection" style="border-color : red">
+                        <div class="titreSection" style=" background-image: url('../img/InProgress.jpg'); ">
+                            <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(255,153,51)">
+                                <i class="fas fa-fire-extinguisher"></i>&emsp;HSE, en cas d'urgence
+                            </h2>
+                            <div style="height:200px;">
+                                <a href="#HSE" data-toggle="modal" data-target="#HSE">
+                                    <p><strong>Procédures d'Urgence</strong></p>
+                                </a>
+                                <p>Liens vers documents utiles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-12 order-lg-2 bg-white">
+                    @{
+                        ViewBag.TypeOfArticle = "ArticleSecretariat";
+                        await Html.RenderPartialAsync("../Shared/_Articles");
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+*@

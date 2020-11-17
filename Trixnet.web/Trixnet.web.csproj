@@ -38,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\img\HSE\" />
     <Folder Include="wwwroot\img\Profiles\" />
   </ItemGroup>
 

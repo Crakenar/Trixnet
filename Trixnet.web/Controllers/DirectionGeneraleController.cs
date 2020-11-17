@@ -30,9 +30,11 @@ namespace Trixnet.web.Views.DirectionGenerale
 
 
         //Infras & HSE
-        [Route("/InfraHSE/InfraHSE.cshtml")]
+        [Route("/HSE")]
         public IActionResult InfraHSE()
         {
+            string val1 = ConfigurationManager.variablesSettings["App:LinkHelpHSE:Value"];
+            ViewBag.LinkHSE = val1;
             return View("Views/DirectionGenerale/InfraHSE/InfraHSE.cshtml");
         }
 

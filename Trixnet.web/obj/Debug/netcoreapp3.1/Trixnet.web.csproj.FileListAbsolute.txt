@@ -788,3 +788,4 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csproj.CoreCompileInputs.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\variables.json
