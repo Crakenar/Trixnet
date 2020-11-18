@@ -75,7 +75,13 @@ namespace Trixnet.web.Controllers
             return View("Views/Products/Products.cshtml");
         }
 
-       
+        [Route("/Org")]
+        public IActionResult Organigramme()
+        {
+            return View("Views/Home/Organigramme.cshtml");
+        }
+
+
 
         //Fonction annuaire Teo berguerre 12/10/2020
         public IActionResult Annuaire(string search, string optionAnnuaire)

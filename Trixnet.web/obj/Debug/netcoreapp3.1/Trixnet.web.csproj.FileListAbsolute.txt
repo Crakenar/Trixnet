@@ -1,5 +1,6 @@
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\efpt.config.json
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\variables.json
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Trixnet.web.exe
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Trixnet.web.deps.json
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Trixnet.web.runtimeconfig.json
@@ -286,6 +287,8 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Dapper.StrongName.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Esprima.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Fluid.dll
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Spire.License.dll
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Spire.Pdf.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\GraphQL.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\GraphQL-Parser.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\HtmlSanitizer.dll
@@ -568,6 +571,7 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\SafeMode.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\SixLabors.ImageSharp.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\SixLabors.ImageSharp.Web.dll
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\SkiaSharp.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
@@ -696,6 +700,11 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\tizen-armel\native\libSkiaSharp.so
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\tizen-x86\native\libSkiaSharp.so
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libSkiaSharp.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -715,6 +724,9 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csprojAssemblyReference.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.AssemblyInfoInputs.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.AssemblyInfo.cs
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csproj.CoreCompileInputs.cache
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.RazorAssemblyInfo.cache
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.RazorAssemblyInfo.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.TagHelpers.input.cache
@@ -755,6 +767,7 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Error.cshtml.g.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Formulaires\Formulaire.cshtml.g.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Annuaire.cshtml.g.cs
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\LiensPratiques\LiensPratiques.cshtml.g.cs
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Privacy.cshtml.g.cs
@@ -776,16 +789,4 @@ C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.dll
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.pdb
 C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.genruntimeconfig.cache
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Spire.License.dll
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\Spire.Pdf.dll
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\SkiaSharp.dll
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\osx\native\libSkiaSharp.dylib
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\tizen-armel\native\libSkiaSharp.so
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\tizen-x86\native\libSkiaSharp.so
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\libSkiaSharp.dll
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libSkiaSharp.dll
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.csproj.CoreCompileInputs.cache
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Trixnet.web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\bin\Debug\netcoreapp3.1\variables.json
+C:\Users\BURINDUS44\Documents\Webmaster\Trixnet - Copie\Trixnet.web\Trixnet.web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Organigramme.cshtml.g.cs

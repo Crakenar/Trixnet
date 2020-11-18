@@ -21,7 +21,7 @@
 }
 <!--Probleme; load le css pour toute la page et non pas juste pour le template _Article.cshtml-->
 <link href="@Url.Content("~/css/ArticleTemplate.css")" rel="stylesheet" type="text/css" />
-@Orchard.ConsoleLog(tab_articles);
+@Orchard.ConsoleLog(tab_articles)
 
 <div class="bg-white">
     <div class="trixell-X AppSection SectionGD SectionHB">
@@ -51,7 +51,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body"> @await Orchard.MarkdownToHtmlAsync((string)articles.Content.MarkdownBodyPart.Markdown)</div>
+                            <div class="modal-body title-overflow"> @await Orchard.MarkdownToHtmlAsync((string)articles.Content.MarkdownBodyPart.Markdown)</div>
                             @if (documents.Count > 0)
                             {
                                 <hr />
@@ -77,12 +77,22 @@
                     <div class="row">
                         <div class="col-lg-4 text-white img-news" style="background-image: url('@item');"></div>
 
-                        
+
                         <div class="col-lg-8 text-news">
-                            
+
                             <a href="#article-@articles.ContentItemId" class="link-news" data-toggle="modal" data-target="#article-@articles.ContentItemId">
                                 <h2 class="title-overflow">@(articleTitre.Length > maxCharacterTitle ? articleTitre.Substring(0, maxCharacterTitle) : articleTitre)</h2>
-                                <span class="lead mb-0 title-overflow" style="text-justify: distribute;"> @await Orchard.MarkdownToHtmlAsync((string)articles.Content.MarkdownBodyPart.Markdown)</span>
+                                @{
+                                    string bodyDescriptionString = (string)articles.Content.MarkdownBodyPart.Markdown; 
+                                }
+                                @if (bodyDescriptionString != null && bodyDescriptionString.Length > maxCharacterDescription)
+                                {
+                                    <span class="lead mb-0 title-overflow" style="text-justify: distribute;"> @bodyDescriptionString.Substring(0, maxCharacterDescription)</span>
+                                }
+                                else
+                                {
+                                    <span class="lead mb-0 title-overflow" style="text-justify: distribute;"> @await Orchard.MarkdownToHtmlAsync((string)articles.Content.MarkdownBodyPart.Markdown)</span>
+                                }
                             </a>
                         </div>
 

@@ -1,0 +1,21 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<section>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="~/js/organigramme.js"></script>
+    <div>
+        <h1>Organigramme</h1>
+    </div>
+    <input id="nom" type="text" name="nom" value="nom + prenom">
+    <br>
+    <input id="fonction" type="text" name="fonction" value="fonction" maxlength="30">
+    <br>
+    <input id="superieur" type="text" name="superieur" value="superieur">
+    <br>
+
+    <button onclick="addUser()">Ajouter un utilisateur</button>
+    <div id="chart_div"></div>
+</section>

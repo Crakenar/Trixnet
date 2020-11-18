@@ -11,16 +11,21 @@
 
 @inject OrchardCore.IOrchardHelper Orchard
 @{
+    var path = "/img/LiensPratiques/";
+    var plan1 = path + "planTrixellThales1.pdf";
     string pathHSE = "wwwroot/img/HSE/";
     var tab_meteoSI = await Orchard.GetRecentContentItemsByContentTypeAsync("MeteoSI", 1);
+    var tab_DocsUrgenceHSE = await Orchard.GetRecentContentItemsByContentTypeAsync("ProcedureUrgenceHSE", 1);
     string pathCMS = "../../../../Media/";
-    string imgPath = ""; //@pathCMS + @tab_meteoSI.First().Content.MeteoSI.MediaMeteoSI.Paths[0];
-
+    //string imgPath = ""; //
+    string imgPath = pathCMS + tab_meteoSI.First().Content.MeteoSI.MediaMeteoSI.Paths[0];
+    string docsUrgenceHSEPath = pathCMS + tab_DocsUrgenceHSE.First().Content.ProcedureUrgenceHSE.DocumentProcedureUrgenceHSE.Paths[0];
     var heure = DateTime.Now.ToString();
     //ViewData["Title"] = "Home Page";
     var imagesCaroussel = ViewBag.ImageCaroussel;
 }
 <!-- Body -->
+<link rel="stylesheet" href="~/css/Accueil.css">
 <section class="showcase">
     <div class="container-fluid p-0">
         <div class="row no-gutters">
@@ -30,7 +35,7 @@
                     <!-- Tableau de bord -->
                     <div class="SectionHB SectionGD AppSection">
                         <div class="titreSection">
-                            <h2 class="jaapooki" style="font-size: 1.5rem; color: rgb(19, 133,203);"><i class="fas fa-cloud-sun"></i> Météo SI</h2>
+                            <h2 class="jaapooki h2Style"><i class="fas fa-cloud-sun"></i> Météo SI</h2>
                         </div>
                         <div>
                             <div class="modal fade" id="meteoSI" tabindex="-1" role="dialog" aria-labelledby="meteoSIModal" aria-hidden="true">
@@ -43,10 +48,10 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            @*<h3>@tab_meteoSI.First()</h3>*@
+                                            <h3>@tab_meteoSI.First()</h3>
                                             <br />
                                             <p><strong>Description</strong></p>
-                                            @*<p>@tab_meteoSI.First().Content.MarkdownBodyPart.Markdown</p>*@
+                                            <p>@tab_meteoSI.First().Content.MarkdownBodyPart.Markdown</p>
                                         </div>
                                         <div class="modal-footer" style="background-image:url(@imgPath);">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -64,7 +69,7 @@
                     <!-- Applications -->
                     <div class="SectionHB SectionGD AppSection">
                         <div class="titreSection">
-                            <h2 class="jaapooki" style="font-size: 1.5rem; color: rgb(19, 133,203);"><i class="fas fa-th-large"></i>  Application</h2>
+                            <h2 class="jaapooki h2Style"><i class="fas fa-th-large"></i>  Application</h2>
                         </div>
                         <ul class="nav flex-column">
                             <li class="app-item">
@@ -91,7 +96,7 @@
                     <div class="SectionHB SectionGD AppSection">
                         <div class="titreSection">
                             <a href="~/SI/Help">
-                                <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(19, 133,203);">
+                                <h2 class="jaapooki h2Style">
                                     <i class="fas fa-headset"></i>&emsp; Support informatique
                                 </h2>
                             </a>
@@ -100,7 +105,7 @@
                     <div class="SectionHB SectionGD AppSection">
                         <div class="titreSection">
                             <a href="@ViewBag.LinkHSE" target="_blank">
-                                <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(19, 133,203);">
+                                <h2 class="jaapooki h2Style">
                                     <i class="fas fa-fire-extinguisher"></i>&emsp;Intervention Infras
                                 </h2>
                             </a>
@@ -108,23 +113,18 @@
                     </div>
                     <!--Modal pour demande urgentes HSE-->
                     <div class="modal fade" id="HSE" tabindex="-1" role="dialog" aria-labelledby="HSEModal" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content modal-lg">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="HSEModal">Guides et Formulaires</h5>
+                                    <h5 class="modal-title" id="HSEModal">En cas d'Urgence</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <span style="color:forestgreen; text-align : center">
-                                        <strong>
-                                            Si vous ne trouvez pas le document souhaité, faites une recherche dans le
-                                            <a href="#">référenciel RH ISO </a>
-                                        </strong>
-                                    </span>
-                                    <br />
-                                    <br />
+                                    <div>
+                                        <iframe src="@docsUrgenceHSEPath" width="1000" height="1000"></iframe>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -132,17 +132,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="SectionHB SectionGD AppSection" style="border-color : red">
+                    <div class="SectionHB SectionGD AppSection border-color-red">
                         <div class="titreSection">
                             <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(255,153,51)">
-                                <i class="fas fa-fire-extinguisher"></i>&emsp;HSE, en cas d'urgence
+                                &emsp;HSE, en cas d'urgence
                             </h2>
-                            <div style="height:200px; background-image: url('../img/InProgress.jpg');  background-size: contain;">
-                                <a href="#HSE" data-toggle="modal" data-target="#HSE">
-                                    <p><strong>Procédures d'Urgence</strong></p>
-                                </a>
-                                <p>Liens vers documents utiles</p>
+                            <div class="myDivHSE">
+                                <!--image extincteur-->
                             </div>
+                            <ul>
+                                <li>
+                                    <a id="procedureUrgence" href="#HSE" data-toggle="modal" data-target="#HSE">
+                                        <span><strong>Procédures d'Urgence</strong></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <a class="dropdown" data-toggle="dropdown">Documents Utiles</a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuInfos">
+                                            <li class="margin-left-20 "><a href="" target="_blank">Liste SST</a></li>
+                                            <li class="margin-left-20 "><a href="" target="_blank">Liste personnes habilitées à intervenir sur épandage majeur</a></li>
+                                            <li class="margin-left-20 "><a href="" target="_blank">Utilisation du Défibrilateur</a></li>
+                                            <li class="margin-left-20 "><a href="" target="_blank">Exposition accidentelle au TLI</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 

@@ -1,6 +1,10 @@
 @page
+@inject OrchardCore.IOrchardHelper Orchard
 @{
     //Teo berguerre 17/11/2020 blocks urgence
+    string pathCMS = "../../../../Media/";
+    var tab_DocsUrgenceHSE = await Orchard.GetRecentContentItemsByContentTypeAsync("ProcedureUrgenceHSE", 1);
+    string docsUrgenceHSEPath = pathCMS + tab_DocsUrgenceHSE.First().Content.ProcedureUrgenceHSE.DocumentProcedureUrgenceHSE.Paths[0];
 }
 
 <link rel="stylesheet" href="~/css/InfraHSE.css">
@@ -53,11 +57,11 @@
                             <div class="SectionHB SectionGD AppSection">
                                 <div class="titreSection">
                                     <a href="@ViewBag.LinkHSE" target="_blank">
-                                        <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(19, 133,203);">
+                                        <h2 class="jaapooki h2Style">
                                             <i class="fas fa-fire-extinguisher"></i>&emsp;Demance Intervention Infras
                                         </h2>
                                     </a>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -74,15 +78,14 @@
                                     <a>3eme lien</a>
                                     <a>4eme lien</a>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="modal fade" id="HSE" tabindex="-1" role="dialog" aria-labelledby="HSEModal" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content modal-lg">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="HSEModal">Guides et Formulaires</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="close">
@@ -90,14 +93,9 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <span style="color:forestgreen; text-align : center">
-                                        <strong>
-                                            Si vous ne trouvez pas le document souhaité, faites une recherche dans le
-                                            <a href="#">référenciel RH ISO </a>
-                                        </strong>
-                                    </span>
-                                    <br />
-                                    <br />
+                                    <div>
+                                        <iframe src="@docsUrgenceHSEPath" width="1000" height="1000"></iframe>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -106,16 +104,31 @@
                         </div>
                     </div>
                     <div class="SectionHB SectionGD AppSection" style="border-color : red">
-                        <div class="titreSection" style=" background-image: url('../img/InProgress.jpg'); ">
+                        <div class="titreSection">
                             <h2 class="jaapooki" style="font-size: 1.3rem; color: rgb(255,153,51)">
-                                <i class="fas fa-fire-extinguisher"></i>&emsp;HSE, en cas d'urgence
+                                &emsp;HSE, en cas d'urgence
                             </h2>
-                            <div style="height:200px;">
-                                <a href="#HSE" data-toggle="modal" data-target="#HSE">
-                                    <p><strong>Procédures d'Urgence</strong></p>
-                                </a>
-                                <p>Liens vers documents utiles</p>
+                            <div class="myDivHSE">
+                                <!--image extincteur-->
                             </div>
+                            <ul>
+                                <li>
+                                    <a id="procedureUrgence" href="#HSE" data-toggle="modal" data-target="#HSE">
+                                        <span><strong>Procédures d'Urgence</strong></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <a class="dropdown" data-toggle="dropdown">Documents Utiles</a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuInfos">
+                                            <li class="margin-left-20 "><a href="" target="_blank">Liste SST</a></li>
+                                            <li class="margin-left-20 "><a href="" target="_blank">Liste personnes habilitées à intervenir sur épandage majeur</a></li>
+                                            <li class="margin-left-20 "><a href="" target="_blank">Utilisation du Défibrilateur</a></li>
+                                            <li class="margin-left-20 "><a href="" target="_blank">Exposition accidentelle au TLI</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
