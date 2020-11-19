@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Trixnet.web.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Trixnet.web.Controllers
 {
@@ -98,15 +99,27 @@ namespace Trixnet.web.Controllers
         //On iter sur arr et on ajoute en BD les attributs
         [HttpPost]
         [Route("/SetDataOrganigramme")]
-        public async Task<JsonResult> setOrganigramme(string x)
+        public void setOrganigramme()
         {
-            string p = x;
-            return Json(p);
+           using(var context = new OrganigrammeContext())
+            {
+                var orga = new OrganigrammeClass()
+                {
+                    id = 10,
+                    v = "testDB",
+                    f = "testDB",
+                    fonction = "testDB",
+                    superieur = "testDB"
+                };
+
+                context.Organigramme.Add(orga);
+                context.SaveChanges();
+            }
         }
 
 
         //Fonction annuaire Teo berguerre 12/10/2020
-        public IActionResult Annuaire(string search, string optionAnnuaire)
+        public async Task<IActionResult> Annuaire(string search, string optionAnnuaire)
         {
             //ne sauvegarde pas les parametres envoyés par le input si refresh de la page en faisant Enter sur l'URL
             if (optionAnnuaire == "eDir")

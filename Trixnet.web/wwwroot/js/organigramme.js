@@ -32,8 +32,6 @@ function sauvegarderOrganigramme() {
     $.ajax({
         type: "post",
         url: "/SetDataOrganigramme",
-        data: JSON.stringify("yo"),
-        dataType: "json",
         succes: function (reponse) {
             console.log(reponse);
         },
