@@ -4,18 +4,30 @@
 @{
 }
 <section>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="~/js/organigramme.js"></script>
     <div>
         <h1>Organigramme</h1>
     </div>
-    <input id="nom" type="text" name="nom" value="nom + prenom">
+    <span>Nom + Prenom</span>
+    <input id="nom" type="text" name="nom">
     <br>
-    <input id="fonction" type="text" name="fonction" value="fonction" maxlength="30">
+    <span>Fonction</span>
+    <input id="fonction" type="text" name="fonction" maxlength="30">
     <br>
-    <input id="superieur" type="text" name="superieur" value="superieur">
+    <span>Superieur</span>
+    <input id="superieur" type="text" name="superieur">
     <br>
 
-    <button onclick="addUser()">Ajouter un utilisateur</button>
+    <button onclick="addUser()">Ajouter un utilisateur (mettre a jour l'organigramme)</button>
+    <br />
+    <br />
+    <button onclick="afficherOrganigramme(); return false">Afficher Organigramme</button>
+    <br />
+    <br />
+    <button onclick="sauvegarderOrganigramme(); return false">Sauvegarder Organigramme</button>
+
     <div id="chart_div"></div>
+
 </section>

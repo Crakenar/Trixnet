@@ -5,6 +5,7 @@
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
     <UserSecretsId>66d30ed0-20ae-421e-beb1-cd8333a83ed9</UserSecretsId>
     <Platforms>AnyCPU;x86</Platforms>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,6 +41,10 @@
   <ItemGroup>
     <Folder Include="wwwroot\img\HSE\" />
     <Folder Include="wwwroot\img\Profiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\organigramme.js" />
   </ItemGroup>
 
   <ItemGroup>

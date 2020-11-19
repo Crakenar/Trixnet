@@ -1,7 +1,8 @@
 google.charts.load('current', { packages: ["orgchart"] });
 google.charts.setOnLoadCallback(drawChart);
 
-
+var arr = [];
+var x;
 function drawChart() {
     var nom = document.getElementById('nom').value;
     var fonction = document.getElementById('fonction').value;
@@ -10,48 +11,50 @@ function drawChart() {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Name');
     data.addColumn('string', 'Manager');
-    data.addColumn('string', 'ToolTip');
 
-    // For each orgchart box, provide the name, manager, and tooltip to show.
-    data.addRows([
-        [{ 'v': 'Mike', 'f': 'Mike<div style="color:red; font-style:italic">President</div>' },
-            'MonChef', 'jsp'],
-        [{ 'v': 'Jim', 'f': 'Jim<div style="color:red; font-style:italic">Vice President</div>' },
-            'Mike', 'VP'],
-        ['Alice', 'Mike', ''],
-        ['Bob', 'Jim', 'Bob Sponge'],
-        ['Carol', 'Bob', ''],
-        [{ 'v': nom, 'f': nom + '<div style=color:red; font-style:italic>' + fonction + '</div>' }, superieur, ''],
-    ]);
-
-    var arr = [];
-    //soit on fait un objet d'un objet pour ensuite simplement le réutiliser soit on le décompose pour l'array et on créera l'objet lors du load du json
-    //arr.push([{'v':nom,'f':nom+'<div style=color:red; font-style:italic>'+fonction+'</div>'},superieur,'']);
-    arr.push({ "nom": nom, "fonction": fonction, "superieur": superieur });
-    var jsonArray = JSON.stringify(arr);
-    //console.log(jsonArray);
-
-    //Essayons de l'envoyer dans un localstorage
-
-
-    //On regarde s'il y a déjà des données sauvegardées
-    var myJSON = JSON.stringify(localStorage.getItem('OrganigrammeHSE'));
-    console.log("données déjà sauvegardées:" + myJSON);
-    var nouvelleArray = [];
-    nouvelleArray.push({ "nom": nom, "fonction": fonction, "superieur": superieur });
-    nouvelleArray.push(JSON.parse(myJSON));
-    console.log("nouvelle donnees:" + nouvelleArray);
-    localStorage.setItem('OrganigrammeHSE', nouvelleArray);
-    console.log("Au final on a : ", Object.values(nouvelleArray));
-
-
+    arr.push([{ 'v': nom, 'f': nom + '<div style=color:red; font-style:italic>' + fonction + '</div>' }, superieur]);
+    //probleme de duplication d'objets
+    data.addRows(arr);
+    //console.log(data);
     // Create the chart.
     var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
     // Draw the chart, setting the allowHtml option to true for the tooltips.
-    chart.draw(data, { 'allowHtml': true });
+    chart.draw(data, { 'allowHtml': true, });
+    x = arr;
 }
 
 function addUser() {
     google.charts.load('current', { packages: ["orgchart"] });
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart);    
+}
+
+function sauvegarderOrganigramme() {
+    $.ajax({
+        type: "post",
+        url: "/SetDataOrganigramme",
+        data: JSON.stringify("yo"),
+        dataType: "json",
+        succes: function (reponse) {
+            console.log(reponse);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+}
+
+function afficherOrganigramme() {
+    $.ajax({
+        type: "get",
+        url: "/GetDataOrganigramme",      
+        success: function (response) {
+            for (var i = 0; i < response.length; i++) {
+                console.log(response[i].superieur);
+                arr.push([{ 'v': response[i].v, 'f': response[i].f + '<div style=color:red; font-style:italic>' + response[i].fonction + '</div>' }, response[i].superieur]);
+            }
+        },
+        error: function (response) {
+            console.log(response.responseText);
+        }
+    });
 }

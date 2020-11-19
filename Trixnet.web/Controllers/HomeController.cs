@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Trixnet.web.Models;
 
@@ -72,15 +73,36 @@ namespace Trixnet.web.Controllers
         [Route("/Products")]
         public IActionResult Products()
         {
-            return View("Views/Products/Products.cshtml");
+            var x = _connection.Organigramme.ToList();
+            return View("Views/Products/Products.cshtml",x);
         }
 
         [Route("/Org")]
         public IActionResult Organigramme()
         {
+            
             return View("Views/Home/Organigramme.cshtml");
         }
 
+        //Avoir l'ensemble de l'organigramme
+        [HttpGet]
+        [Route("/GetDataOrganigramme")]
+        public async Task<JsonResult> getOrganigramme()
+        {
+            var x = _connection.Organigramme.ToList();
+            return Json(x);
+        }
+
+        //Envoyer l'organigramme en BD
+        //Il faut recuperer un array d'objet.
+        //On iter sur arr et on ajoute en BD les attributs
+        [HttpPost]
+        [Route("/SetDataOrganigramme")]
+        public async Task<JsonResult> setOrganigramme(string x)
+        {
+            string p = x;
+            return Json(p);
+        }
 
 
         //Fonction annuaire Teo berguerre 12/10/2020

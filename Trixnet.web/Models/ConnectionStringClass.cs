@@ -11,5 +11,6 @@ namespace Trixnet.web.Models
 
         //public DbSet<DocumentsClass> trix_Document { get; set; }
         public DbSet<AnnuaireClass> Annuaire { get; set; }
+        public DbSet<OrganigrammeClass> Organigramme { get; set; }
     }
 }
