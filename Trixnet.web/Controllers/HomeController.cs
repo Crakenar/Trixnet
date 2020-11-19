@@ -106,7 +106,7 @@ namespace Trixnet.web.Controllers
                 var orga = new OrganigrammeClass()
                 {
                     id = 10,
-                    v = "testDB",
+                    v = "testDBs",
                     f = "testDB",
                     fonction = "testDB",
                     superieur = "testDB"
