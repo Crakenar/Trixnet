@@ -327,7 +327,7 @@ a:hover{
 }
 
 .carousel-item{
-  max-height: 25rem;
+  max-height: 5rem;
 }
 
 .navbar{
@@ -520,6 +520,21 @@ Teo berguerre
 
 */
 .imgSectionCaroussel {
-    height: 900px;
+    height: 800px !important;
     /*object-fit: contain;*/
 }
+
+@media screen and (min-width : 1400px) and (max-width : 1800px) {
+    .imgSectionCaroussel {
+        height: 550px !important;
+        /*object-fit: contain;*/
+    }
+}
+
+@media screen and (max-width : 1400px) {
+    .imgSectionCaroussel {
+        height: 500px!important;
+        /*object-fit: contain;*/
+    }
+}
+
