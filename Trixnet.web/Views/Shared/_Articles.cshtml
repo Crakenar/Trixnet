@@ -22,7 +22,6 @@
 <!--Probleme; load le css pour toute la page et non pas juste pour le template _Article.cshtml-->
 <link href="@Url.Content("~/css/ArticleTemplate.css")" rel="stylesheet" type="text/css" />
 @Orchard.ConsoleLog(tab_articles)
-
 <div class="bg-white">
     <div class="trixell-X AppSection SectionGD SectionHB">
         <div class="container showcase-text">
@@ -35,8 +34,7 @@
             string articleTitre = articles.DisplayText;
             //si le texte est null alors on met "pas de description"
             articleText ??= "pas de description";
-
-            Trixnet.web.Services.UtilitairesClass utils = new Services.UtilitairesClass();
+            Trixnet.web.Services.UtilitairesClass utils = new Trixnet.web.Services.UtilitairesClass();
             //Permet de recuperer l'ensemble des documents d'un article
             var documents = utils.setDocumentsArticle(articles.Content.BagPart.Media.Paths);
             imagesPrincipales = utils.getImagePrincipale(type, articles);
@@ -76,10 +74,7 @@
                 <div class="container showcase-text">
                     <div class="row">
                         <div class="col-lg-4 text-white img-news" style="background-image: url('@item');"></div>
-
-
                         <div class="col-lg-8 text-news">
-
                             <a href="#article-@articles.ContentItemId" class="link-news" data-toggle="modal" data-target="#article-@articles.ContentItemId">
                                 <h2 class="title-overflow">@(articleTitre.Length > maxCharacterTitle ? articleTitre.Substring(0, maxCharacterTitle) : articleTitre)</h2>
                                 @{
@@ -95,7 +90,6 @@
                                 }
                             </a>
                         </div>
-
                     </div>
                     @if (documents.Count > 0)
                     {

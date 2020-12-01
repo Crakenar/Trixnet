@@ -17,8 +17,9 @@
     var tab_meteoSI = await Orchard.GetRecentContentItemsByContentTypeAsync("MeteoSI", 1);
     var tab_DocsUrgenceHSE = await Orchard.GetRecentContentItemsByContentTypeAsync("ProcedureUrgenceHSE", 1);
     string pathCMS = "../../../../Media/";
+    string pathCMSMeteo = "../../../../Media/";
     //string imgPath = ""; //
-    string imgPath = pathCMS + tab_meteoSI.First().Content.MeteoSI.MediaMeteoSI.Paths[0];
+    string imgPath = pathCMSMeteo + tab_meteoSI.First().Content.MeteoSI.MediaMeteoSI.Paths[0];
     string docsUrgenceHSEPath = pathCMS + tab_DocsUrgenceHSE.First().Content.ProcedureUrgenceHSE.DocumentProcedureUrgenceHSE.Paths[0];
     var heure = DateTime.Now.ToString();
     //ViewData["Title"] = "Home Page";
@@ -35,7 +36,7 @@
                     <!-- Tableau de bord -->
                     <div class="SectionHB SectionGD AppSection">
                         <div class="titreSection">
-                            <h2 class="jaapooki h2Style"><i class="fas fa-cloud-sun"></i> Météo SI</h2>
+                            <h2 class="jaapooki h2Style"><i class="fas fa-cloud-sun"></i> Météo SI <span id="time"> </span></h2>
                         </div>
                         <div>
                             <div class="modal fade" id="meteoSI" tabindex="-1" role="dialog" aria-labelledby="meteoSIModal" aria-hidden="true">
@@ -207,3 +208,4 @@
     </div>
 </section>
 <script src="~/wwwroot/js/rss.js" type="text/javascript"></script>
+<script src="~/js/DateDynamique.js" type="text/javascript"></script>
